@@ -6,4 +6,4 @@ using Base.Test
 
 # Constructor test
 import CompressedStacks.stack_test
-stack_test(1024,8)
+stack_test(81,3)
