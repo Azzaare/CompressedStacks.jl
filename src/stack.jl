@@ -60,8 +60,9 @@ end
 function reconstruct(stack::CompressedStack, lvl::Int)
   bottom = stack.s_compressed[lvl][end].first
   top = stack.s_compressed[lvl][end].last
+  println("Reconstruct Function:")
   for i in bottom:top
-    println("$i")
+    println("\t\t\t\t$i")
   end
 end
 
