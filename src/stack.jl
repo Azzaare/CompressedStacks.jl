@@ -19,7 +19,7 @@ function reduce_block!(v::Level, elt::Int)
   v[end].last = elt
 end
 
-# Push or pop element
+# Push function for Compressed Stacks
 function push!(stack::CompressedStack, elt::Int)
   if (mod(elt,stack.space) == 1) || (elt - stack.f_explicit[end] >= stack.space)
     stack.s_explicit = stack.f_explicit
@@ -48,74 +48,79 @@ function push!(stack::CompressedStack, elt::Int)
   end
 end
 
-function push2!(stack::CompressedStack, elt::Int, lvl::Int)
-  if (mod(elt,stack.space) == 1) || (elt - stack.s_explicit[end] >= stack.space)
-    stack.s_explicit = stack.f_explicit
-    stack.f_explicit = [elt]
+## Simplified code of pop for CompressedStack
+function reconstruct!(stack::CompressedStack, lvl::Int, start::Int, stop::Int, context::Int)
+  println("Implement reconstruct!")
+end
+
+function empty_first!(stack::CompressedStack, elt::Int, lvl::Int)
+  if stack.f_compressed[lvl][1] == elt
+    pop!(stack.f_compressed[lvl])
+    if lvl > 1
+      empty_first!(stack, elt, lvl-1)
+    end
   else
-    push!(stack.f_explicit,elt)
+    propagate_first!(stack, elt, lvl)
   end
 end
 
-function reconstruct(stack::CompressedStack, lvl::Int)
-  bottom = stack.s_compressed[lvl][end].first
-  top = stack.s_compressed[lvl][end].last
-  println("Reconstruct Function:")
-  for i in bottom:top
-    println("\t\t\t\t$i")
+function empty_second!(stack::CompressedStack, elt::Int, lvl::Int)
+  if !isempty(stack.f_compressed[lvl])
+    empty_first!(stack, elt, lvl)
+  elseif stack.s_compressed[lvl][1] == elt
+    pop!(s_compressed[lvl])
+    if lvl > 1
+      empty_second!(stack, elt, lvl - 1)
+    else
+      reconstruct!(stack, 0, stack.compressed_tail[1], stack.compressed_tail[end], 0)
+    end
+  else
+    propagate_second!(stack, elt, lvl)
+    reconstruct!(stack, lvl + 1, stack.s_compressed[1], stack.s_compressed[end])
+  end
+end
+
+function propagate_first!(stack::CompressedStack, elt::Int, lvl::Int)
+  for i in 1:lvl
+    stack.f_compressed[i][end].last = elt
+  end
+end
+
+function propagate_second!(stack::CompressedStack, elt::Int, lvl::Int)
+  if isempty(stack.f_compressed[lvl])
+    stack.s_compressed[lvl][end].last = elt
+    if lvl > 1
+      propagate_second!(stack, elt, lvl - 1)
+    end
+  else
+    propagate_first!(stack, elt, lvl)
+  end
+end
+
+function pop_first!(stack)
+  elt = pop!(stack.f_explicit)
+  println("To implement: pop_action()")
+  if isempty(stack.f_explicit)
+    empty_first!(stack, elt, stack.depth-1)
+  else
+    propagate_first!(stack, stack.f_explicit[end], stack.depth-1)
+  end
+end
+
+function pop_second!(stack::CompressedStack)
+  elt = pop!(stack.s_explicit)
+  println("To implement: pop_action()")
+  if isempty(stack.s_explicit)
+    empty_second!(stack, elt, stack.depth - 1)
+  else
+    propagate_second!(stack, elt, stack.depth - 1)
   end
 end
 
 function pop!(stack::CompressedStack)
-  l = length(stack.f_explicit)
-  if l > 0 ## Check f_explicit
-    elt = pop!(stack.f_explicit)
-    i = stack.depth - 1
-    while i > 0
-      if (i == stack.depth - 1) && isempty(stack.f_explicit)
-        pop!(stack.f_compressed[i])
-      elseif (i < stack.depth - 1) && isempty(stack.f_compressed[i+1])
-        pop!(stack.f_compressed[i])
-      else
-        if i == stack.depth - 1
-          elt = stack.f_explicit[end]
-        else
-          elt = stack.f_compressed[i+1][end].last
-        end
-        break;
-      end
-      i -= 1
-    end
-    while i > 0
-      reduce_block!(stack.f_compressed[i],elt)
-      i -= 1
-    end
-  else ## Check s_explicit
-    l = length(stack.s_explicit)
-    if l > 0
-      elt = pop!(stack.s_explicit)
-      i = stack.depth - 1
-      while i > 0
-        if (i == stack.depth - 1) && isempty(stack.s_explicit)
-          pop!(stack.s_compressed[i])
-        elseif (i < stack.depth - 1) && isempty(stack.s_compressed[i+1])
-          pop!(stack.s_compressed[i])
-        else
-          if i == stack.depth - 1
-            elt = stack.s_explicit[end]
-          else
-            elt = stack.s_compressed[i+1][end].last
-          end
-          break;
-        end
-        i -= 1
-      end
-      ## reconstruction of lower levels
-      reconstruct(stack,i+1)
-      while i > 0
-        reduce_block!(stack.s_compressed[i],elt)
-        i -= 1
-      end
-    end
+  if isempty(stack.f_explicit)
+    pop_second!(stack)
+  else
+    pop_first!(stack)
   end
 end
