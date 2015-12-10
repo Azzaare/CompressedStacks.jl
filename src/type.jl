@@ -5,6 +5,10 @@ type Pair
   first::Int
   last::Int
 end
+function Pair(elt::Int)
+  Pair(elt,elt)
+end
+
 typealias Level Vector{Pair}
 
 ## Type CompressedStack

@@ -3,7 +3,7 @@
 ## Import
 import Base.push!, Base.pop!
 
-# Compress functions
+# Read/Write Compressed Block
 function compress!(c::Pair,v::Level)
   compress!(v[end].last,c)
 end
@@ -11,44 +11,54 @@ function compress!(elt::Int,p::Pair)
   p.last = elt
 end
 
-# Read/Write Compressed Block
 function read_top(v::Level)
   return v[end].last
 end
-function reduce_block!(v::Level, elt::Int)
+
+function read_bottom(v::Level)
+  return v[end].first
+end
+
+function update_top!(v::Level, elt::Int)
   v[end].last = elt
 end
 
 # Push function for Compressed Stacks
-function push!(stack::CompressedStack, elt::Int)
+function push_explicit!(stack::CompressedStack, elt::Int)
   if (mod(elt,stack.space) == 1) || (elt - stack.f_explicit[end] >= stack.space)
     stack.s_explicit = stack.f_explicit
     stack.f_explicit = [elt]
   else
     push!(stack.f_explicit,elt)
   end
-  i = stack.depth - 1
-  while i > 0
-    p_i = stack.space^(i+1)
-    dist = stack.size / p_i
-    top = stack.f_compressed[i][end].last
-    start_block = top - mod(top-1,p_i)
-    if elt - start_block < dist
-      compress!(elt,stack.f_compressed[i][end])
-    elseif elt - start_block <= dist * stack.space
-      push!(stack.f_compressed[i],Pair(elt,elt))
-    else
-      if i == 1
-        compress!(stack.compressed,stack.s_compressed)
-      end
-      stack.s_compressed[i] = stack.f_compressed[i]
-      stack.f_compressed[i] = [Pair(elt,elt)]
+end
+
+function push_compressed!(stack::CompressedStack, lvl::Int, elt::Int)
+  p = stack.space^(lvl+1)
+  dist = stack.size / p
+  top = read_top(stack.f_compressed[lvl])
+  start_block = top - mod(top-1,p)
+  if elt - start_block < dist
+    update_top!(stack.f_compressed[lvl], elt) # compress new element into block of level i
+  elseif elt - start_block <= dist * stack.space
+    push!(stack.f_compressed[lvl],Pair(elt))
+  else
+    if lvl == 1
+      compress!(stack.compressed,stack.s_compressed)
     end
-    i -= 1
+    stack.s_compressed[lvl] = stack.f_compressed[lvl]
+    stack.f_compressed[lvl] = [Pair(elt)]
   end
 end
 
-## Simplified code of pop for CompressedStack
+function push!(stack::CompressedStack, elt::Int)
+  push_explicit!(stack, elt) ## update the explicit vectors, with possibly shifting first to second beforehand
+  for i in 1:(stack.depth-1)
+    push_compressed!(stack, i, elt)
+  end
+end
+
+## pop for CompressedStack
 function reconstruct!(stack::CompressedStack, lvl::Int, start::Int, stop::Int, context::Int)
   println("Implement reconstruct!")
 end
@@ -82,13 +92,13 @@ end
 
 function propagate_first!(stack::CompressedStack, elt::Int, lvl::Int)
   for i in 1:lvl
-    stack.f_compressed[i][end].last = elt
+    update_top!(stack.f_compressed[i],elt)
   end
 end
 
 function propagate_second!(stack::CompressedStack, elt::Int, lvl::Int)
   if isempty(stack.f_compressed[lvl])
-    stack.s_compressed[lvl][end].last = elt
+    update_top!(stack.s_compressed[lvl], elt)
     if lvl > 1
       propagate_second!(stack, elt, lvl - 1)
     end
