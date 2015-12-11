@@ -1,41 +1,50 @@
-### File with the types for CompressedStack
+### File with the types for CompressedStacks
 
-## Type Pair
-type Pair
+## Parametric CompressedStack
+type ExtPair{T}
   first::Int
   last::Int
+  context::T
 end
-function Pair(elt::Int)
-  Pair(elt,elt)
-end
+typealias Block{T} Vector{ExtPair{T}}
+typealias Levels{T} Vector{Block{T}}
 
-typealias Level Vector{Pair}
-
-## Type CompressedStack
-type CompressedStack
+type CompressedStack{T}
   size::Int
   space::Int
   depth::Int
-  input::Vector{Bool}
-  compressed::Pair
+  input::Nullable{IOStream}
+  ouput::Nullable{IOStream}
+  condition_push::Function
+  action_push::Function
+  condition_pop::Function
+  action_pop::Function
   f_explicit::Vector{Int}
+  f_compressed::Levels{T}
   s_explicit::Vector{Int}
-  f_compressed::Vector{Level}
-  s_compressed::Vector{Level}
+  s_compressed::Levels{T}
+  compressed::Nullable{ExtPair{T}}
 end
 
-# Constructor
-function CompressedStack(input_size::Int, space::Int, input::Vector{Bool})
+## Fixed types
+typealias IntStack CompressedStack{Int}
+typealias Float64Stack CompressedStack{Float64}
+typealias StringStack CompressedStack{ASCIIString}
+
+## Constructors
+function CompressedStack(input_size::Int, space::Int, context_type::DataType,
+  condition_push::Function, action_push::Function,
+  condition_pop::Function, action_pop::Function,
+  input_file = Nullable{IOStream}(), output_file = Nullable{IOStream}())
+
   h = convert(Int,ceil(log(space,input_size-0.1))) - 1
-  compressed_tail = Pair(0,0)
-  explicit_first = Vector{Int}()
-  explicit_second = Vector{Int}()
-  compressed_first = Vector{Level}()
-  compressed_second = Vector{Level}()
-  for i in 1:(h-1)
-    push!(compressed_first,Vector{Pair}())
-    push!(compressed_second,Vector{Pair}())
-  end
-  CompressedStack(input_size,space,h,input,compressed_tail, explicit_first,
-  explicit_second, compressed_first, compressed_second)
+  compressed = Nullable{ExtPair{context_type}}()
+  f_explicit = Vector{Int}()
+  f_compressed = Levels{context_type}()
+  s_explicit = Vector{Int}()
+  s_compressed = Levels{context_type}()
+
+  CompressedStack(input_size, space, h, input_file, output_file,
+  condition_push, action_push, condition_pop, action_pop,
+  f_explicit, f_compressed, s_explicit, s_compressed, compressed)
 end

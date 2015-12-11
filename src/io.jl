@@ -5,10 +5,10 @@
 import Base.print
 
 ## print functions
-function to_string(p::Pair)
-  return "($(p.first),$(p.last))"
+function to_string(p::ExtPair)
+  return "($(p.first),$(p.last)) <- $(p.context)"
 end
-function to_string(v::Level)
+function to_string(v::Block)
   str = "["
   for (id,p) in enumerate(v)
     if id == 1
@@ -20,7 +20,7 @@ function to_string(v::Level)
   str *= "]"
   return str
 end
-function to_string(v::Vector{Level})
+function to_string(v::Levels)
   str = "[\t\t\t\t"
   for (id,p) in enumerate(v)
       str *= "\n\t\t\tLevel $id\t\t$(to_string(p))"

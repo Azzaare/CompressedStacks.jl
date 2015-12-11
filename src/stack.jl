@@ -4,22 +4,22 @@
 import Base.push!, Base.pop!
 
 # Read/Write Compressed Block
-function compress!(c::Pair,v::Level)
+function compress!(c::Pair,v::Block)
   compress!(v[end].last,c)
 end
 function compress!(elt::Int,p::Pair)
   p.last = elt
 end
 
-function read_top(v::Level)
+function read_top(v::Block)
   return v[end].last
 end
 
-function read_bottom(v::Level)
+function read_bottom(v::Block)
   return v[end].first
 end
 
-function update_top!(v::Level, elt::Int)
+function update_top!(v::Block, elt::Int)
   v[end].last = elt
 end
 
