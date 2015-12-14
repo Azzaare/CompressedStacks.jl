@@ -4,11 +4,17 @@
 ## Import
 import Base.print
 
-## print functions
-function to_string(p::ExtPair)
+## convert functions
+function to_string(p::Nullable{ExtPair{Int}})
+  if !isnull(p)
+    to_string(get(p))
+  end
+  return "∅"
+end
+function to_string(p::ExtPair{Int})
   return "($(p.first),$(p.last)) <- $(p.context)"
 end
-function to_string(v::Block)
+function to_string(v::Block{Int})
   str = "["
   for (id,p) in enumerate(v)
     if id == 1
@@ -20,7 +26,7 @@ function to_string(v::Block)
   str *= "]"
   return str
 end
-function to_string(v::Levels)
+function to_string(v::Levels{Int})
   str = "[\t\t\t\t"
   for (id,p) in enumerate(v)
       str *= "\n\t\t\tLevel $id\t\t$(to_string(p))"
