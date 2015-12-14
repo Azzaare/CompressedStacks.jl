@@ -4,27 +4,27 @@
 import Base.push!, Base.pop!
 
 # Read/Write Compressed Block
-function compress!(c::Pair,v::Block)
+function compress!{T}(c::ExtPair{T},v::Block{T})
   compress!(v[end].last,c)
 end
-function compress!(elt::Int,p::Pair)
+function compress!{T}(elt::Int,p::ExtPair{T})
   p.last = elt
 end
 
-function read_top(v::Block)
+function read_top{T}(v::Block{T})
   return v[end].last
 end
 
-function read_bottom(v::Block)
+function read_bottom{T}(v::Block{T})
   return v[end].first
 end
 
-function update_top!(v::Block, elt::Int)
+function update_top!{T}(v::Block{T}, elt::Int)
   v[end].last = elt
 end
 
 # Push function for Compressed Stacks
-function push_explicit!(stack::CompressedStack, elt::Int)
+function push_explicit!{T}(stack::CompressedStack{T}, elt::Int)
   if (mod(elt,stack.space) == 1) || (elt - stack.f_explicit[end] >= stack.space)
     stack.s_explicit = stack.f_explicit
     stack.f_explicit = [elt]
@@ -33,7 +33,7 @@ function push_explicit!(stack::CompressedStack, elt::Int)
   end
 end
 
-function push_compressed!(stack::CompressedStack, lvl::Int, elt::Int)
+function push_compressed!{T}(stack::CompressedStack{T}, lvl::Int, elt::Int)
   p = stack.space^(lvl+1)
   dist = stack.size / p
   top = read_top(stack.f_compressed[lvl])
@@ -41,17 +41,17 @@ function push_compressed!(stack::CompressedStack, lvl::Int, elt::Int)
   if elt - start_block < dist
     update_top!(stack.f_compressed[lvl], elt) # compress new element into block of level i
   elseif elt - start_block <= dist * stack.space
-    push!(stack.f_compressed[lvl],Pair(elt))
+    push!(stack.f_compressed[lvl],ExtPair(elt,elt,get(stack.context)))
   else
     if lvl == 1
       compress!(stack.compressed,stack.s_compressed)
     end
     stack.s_compressed[lvl] = stack.f_compressed[lvl]
-    stack.f_compressed[lvl] = [Pair(elt)]
+    stack.f_compressed[lvl] = [ExtPair(elt,elt,get(stack.context))]
   end
 end
 
-function push!(stack::CompressedStack, elt::Int)
+function push!{T}(stack::CompressedStack{T}, elt::Int)
   push_explicit!(stack, elt) ## update the explicit vectors, with possibly shifting first to second beforehand
   for i in 1:(stack.depth-1)
     push_compressed!(stack, i, elt)
@@ -59,11 +59,11 @@ function push!(stack::CompressedStack, elt::Int)
 end
 
 ## pop for CompressedStack
-function reconstruct!(stack::CompressedStack, lvl::Int, start::Int, stop::Int, context::Int)
+function reconstruct!{T}(stack::CompressedStack{T}, lvl::Int, start::Int, stop::Int, context::T)
   println("Implement reconstruct!")
 end
 
-function empty_first!(stack::CompressedStack, elt::Int, lvl::Int)
+function empty_first!{T}(stack::CompressedStack{T}, elt::Int, lvl::Int)
   if stack.f_compressed[lvl][1] == elt
     pop!(stack.f_compressed[lvl])
     if lvl > 1
@@ -74,7 +74,7 @@ function empty_first!(stack::CompressedStack, elt::Int, lvl::Int)
   end
 end
 
-function empty_second!(stack::CompressedStack, elt::Int, lvl::Int)
+function empty_second!{T}(stack::CompressedStack{T}, elt::Int, lvl::Int)
   if !isempty(stack.f_compressed[lvl])
     empty_first!(stack, elt, lvl)
   elseif stack.s_compressed[lvl][1] == elt
@@ -90,13 +90,13 @@ function empty_second!(stack::CompressedStack, elt::Int, lvl::Int)
   end
 end
 
-function propagate_first!(stack::CompressedStack, elt::Int, lvl::Int)
+function propagate_first!{T}(stack::CompressedStack{T}, elt::Int, lvl::Int)
   for i in 1:lvl
     update_top!(stack.f_compressed[i],elt)
   end
 end
 
-function propagate_second!(stack::CompressedStack, elt::Int, lvl::Int)
+function propagate_second!{T}(stack::CompressedStack{T}, elt::Int, lvl::Int)
   if isempty(stack.f_compressed[lvl])
     update_top!(stack.s_compressed[lvl], elt)
     if lvl > 1
@@ -107,7 +107,7 @@ function propagate_second!(stack::CompressedStack, elt::Int, lvl::Int)
   end
 end
 
-function pop_first!(stack)
+function pop_first!{T}(stack::CompressedStack{T})
   elt = pop!(stack.f_explicit)
   println("To implement: pop_action()")
   if isempty(stack.f_explicit)
@@ -117,7 +117,7 @@ function pop_first!(stack)
   end
 end
 
-function pop_second!(stack::CompressedStack)
+function pop_second!{T}(stack::CompressedStack{T})
   elt = pop!(stack.s_explicit)
   println("To implement: pop_action()")
   if isempty(stack.s_explicit)
@@ -127,7 +127,7 @@ function pop_second!(stack::CompressedStack)
   end
 end
 
-function pop!(stack::CompressedStack)
+function pop!{T}(stack::CompressedStack{T})
   if isempty(stack.f_explicit)
     pop_second!(stack)
   else

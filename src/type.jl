@@ -13,6 +13,7 @@ type CompressedStack{T}
   size::Int
   space::Int
   depth::Int
+  context::Nullable{T}
   input::Nullable{IOStream}
   ouput::Nullable{IOStream}
   condition_push::Function
@@ -34,7 +35,8 @@ typealias StringStack CompressedStack{ASCIIString}
 ## Constructors
 function CompressedStack(input_size::Int, space::Int, context_type::DataType,
   condition_push::Function, action_push::Function,
-  condition_pop::Function, action_pop::Function,
+  condition_pop::Function, action_pop::Function;
+  context = Nullable{context_type}(),
   input_file = Nullable{IOStream}(), output_file = Nullable{IOStream}())
 
   h = convert(Int,ceil(log(space,input_size-0.1))) - 1
@@ -44,7 +46,14 @@ function CompressedStack(input_size::Int, space::Int, context_type::DataType,
   s_explicit = Vector{Int}()
   s_compressed = Levels{context_type}()
 
-  CompressedStack(input_size, space, h, input_file, output_file,
-  condition_push, action_push, condition_pop, action_pop,
+  for i in 1:(h-1)
+    push!(f_compressed,Vector{ExtPair{context_type}}())
+    push!(s_compressed,Vector{ExtPair{context_type}}())
+  end
+
+  println("context: $(context)")
+
+  CompressedStack(input_size, space, h, context, input_file,
+  output_file, condition_push, action_push, condition_pop, action_pop,
   f_explicit, f_compressed, s_explicit, s_compressed, compressed)
 end

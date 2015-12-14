@@ -19,8 +19,9 @@ function pop_action()
   println("Pop Action")
 end
 function int_stack(size::Int, space::Int)
-  stack = CompressedStack(size, space, Int, push_condition, push_action, pop_condition, pop_action)
-  stack.compressed = ExtPair(3,26,0)
+  stack = CompressedStack(size, space, Int, push_condition, push_action,
+  pop_condition, pop_action, context = Nullable(10))
+  stack.compressed = Nullable(ExtPair(3,26,0))
   push!(stack.f_explicit,55,56,57)
   push!(stack.s_explicit,44)
   print(stack)
