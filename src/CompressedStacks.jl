@@ -1,60 +1,36 @@
+### Julia module for the Compressed Stack structure ###
 module CompressedStacks
 
-include("type.jl")
-include("stack.jl")
+## Import/Export
+import Base.print, Base.string # to use in io.jl
+import Base.push!, Base.pop!, Base.isempty # to use in stack.jl
+
+## Basic types and constructors for CompressedStack
+include("base.jl")
+
+## I/O for Compressed Stack structure
 include("io.jl")
 
+## Action for Compressed Stack's internals mechanisms
+include("intern.jl")
+
+## Specialized types of Compressed Stacks
+
+## Function to run a CompressedStack similarly than for a classic stack
+function run(stack::CompressedStack)
+  while !eof(stack.input)
+    while !isempty(stack) && stack.pop_condition(stack)
+      pop!(stack)
+    end
+    elt = readinput(stack)
+    println(typeof(elt))
+    if stack.push_condition(stack,elt)
+      push!(stack, elt)
+    end
+  end
+end
+
 ## Testing part
+include("temp.jl")
 
-function push_condition()
-  return rand(Bool)
-end
-function pop_condition()
-  return rand(Bool)
-end
-function push_action()
-  println("Push Action")
-end
-function pop_action()
-  println("Pop Action")
-end
-function int_stack(size::Int, space::Int)
-  stack = CompressedStack(size, space, Int, push_condition, push_action,
-  pop_condition, pop_action, context = Nullable(10))
-  stack.compressed = Nullable(ExtPair(3,26,0))
-  push!(stack.f_explicit,55,56,57)
-  push!(stack.s_explicit,44)
-  print(stack)
-  push!(stack.f_compressed[1],ExtPair(55,57,0))
-  push!(stack.f_compressed[2],ExtPair(55,57,0))
-  push!(stack.s_compressed[1],ExtPair(30,30,0))
-  push!(stack.s_compressed[1],ExtPair(37,44,0))
-  push!(stack.s_compressed[2],ExtPair(37,39,0))
-  push!(stack.s_compressed[2],ExtPair(41,42,0))
-  push!(stack.s_compressed[2],ExtPair(44,44,0))
-  return stack
-end
-
-function stack_test(size::Int, space::Int)
-  stack = int_stack(size, space)
-  print(stack)
-  pop!(stack)
-  print(stack)
-  pop!(stack)
-  print(stack)
-  pop!(stack)
-  print(stack)
-  pop!(stack)
-  print(stack)
-end
-
-function push_test(size::Int, space::Int)
-  stack = int_stack(size, space)
-  print(stack)
-  push!(stack,58)
-  print(stack)
-  push!(stack,75)
-  print(stack)
-end
-
-end # module
+end ### of CompressedStacks module
