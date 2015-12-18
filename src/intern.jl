@@ -19,15 +19,12 @@ function isempty(stack::CompressedStack, lvl::Int)
 end
 
 # Read/Write Compressed Block
-function compress!{T}(sign::Signature{T}, block::Block{T})
-  compress!(sign, block[end].last)
-end
-function compress!{T}(sign::Signature{T}, index::Int)
-  sign.last = index
-end
-
 function read_top{T}(block::Block{T})
   return block[end].last
+end
+
+function read_top{T}(stack::CompressedStack{T})
+  return read_top(stack.first_partial[1])
 end
 
 function read_bottom{T}(block::Block{T})
@@ -38,39 +35,66 @@ function update_top!{T}(block::Block{T}, index::Int)
   block[end].last = index
 end
 
+function update_top!{T}(block::Block{T}, subblock::Int, index::Int)
+  block[subblock].last = index
+end
+
+function compress!{T}(sign::Nullable{Signature{T}}, block::Block{T})
+  if isempty(block)
+    sign = Nullable{Signature}()
+  else
+    if isnull(sign)
+    sign = Nullable(Signature(block))
+    else
+      compress!(sign, block[end].last)
+    end
+  end
+end
+function compress!{T}(sign::Signature{T}, index::Int)
+  sign.last = index
+end
+
 ## Push functions for CompressedStack : push!, push_compressed!, push_explicit!
 
 # Function push_explicit to push from input into the explicit blocks
 function push_explicit!{T,D}(stack::CompressedStack{T,D}, elt::D)
-  bool1 = mod(stack.index,stack.space) == 1
   if isempty(stack.first_explicit)
-    push!(stack.first_explicit,elt)
-  elseif bool1 || stack.index - stack.first_explicit[end] >= stack.space
-    stack.second_explicit = stack.first_explicit
-    stack.first_explicit = [elt]
+    push!(stack.first_explicit, elt)
   else
-    push!(stack.first_explicit,elt)
+    top = read_top(stack)
+    start_block = top - mod(top - 1, stack.space)
+    if stack.index - start_block < stack.space
+      push!(stack.first_explicit,elt)
+    else
+      stack.second_explicit = stack.first_explicit
+      stack.first_explicit = [elt]
+    end
   end
 end
 
 # Function to push (possibly fully) compressed index of new data from input
 function push_compressed!{T,D}(stack::CompressedStack{T,D}, lvl::Int)
-  p = stack.space^(lvl + 1)
+  p = stack.space^(lvl)
   dist = stack.size / p
 
   if isempty(stack, lvl)
     push!(stack.first_partial[lvl],Signature(stack.index, get(stack.context)))
   else
     top = read_top(stack.first_partial[lvl])
-    start_block = top - mod(top - 1, p)
-    if stack.index - start_block < dist
-      # compress new element into block of level i
-      update_top!(stack.first_partial[lvl], stack.index)
-    elseif stack.index - start_block <= dist * stack.space
-      push!(stack.first_partial[lvl],Signature(stack.index, get(stack.context)))
+    start_block = top - mod(top - 1, dist)
+    δ = stack.index - start_block # distance of the new index and current block
+    if δ < dist
+      # compress new element in the top of the current Block
+      subblock = convert(Int, ceil(δ * stack.space / dist))
+      if mod(δ, dist / stack.space) == 0
+        sign = Signature(stack.index, get(stack.context))
+        push!(stack.first_partial[lvl], sign)
+      else
+        update_top!(stack.first_partial[lvl], subblock, stack.index)
+      end
     else
       if lvl == 1
-        compress!(stack.compressed,stack.second_partial)
+        compress!(stack.compressed, stack.second_partial[1])
       end
       stack.second_partial[lvl] = stack.first_partial[lvl]
       stack.first_partial[lvl] = [Signature(stack.index, get(stack.context))]

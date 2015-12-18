@@ -89,18 +89,14 @@ function get_settings(f::IOStream)
 
   while i < 2
     line = readline(f)
-    println("Line $i: $line")
     if line[1] != '#'
       i += 1
       if i == 1
         aux = split(line)
         size = parse(Int,aux[1])
         space = parse(Int,aux[2])
-        println("Aux: $aux, size=$size, space=$space")
-        println(typeof(aux))
       end
     end
-    println("Line $i: $line")
   end
   return size,space
 end

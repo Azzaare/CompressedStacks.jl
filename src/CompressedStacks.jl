@@ -23,8 +23,7 @@ function run(stack::CompressedStack)
       pop!(stack)
     end
     elt = readinput(stack)
-    println(typeof(elt))
-    if stack.push_condition(stack,elt)
+    if stack.push_condition(stack, elt)
       push!(stack, elt)
     end
   end

@@ -6,14 +6,16 @@ function io_test()
   end
 
   function condition_pop(stack::CompressedStack)
-    return true
+    return false
   end
 
   function action_push(stack::CompressedStack{Int,Int}, elt::Int)
     stack.context = Nullable(stack.index)
+    print(stack)
   end
 
   function action_pop(stack::CompressedStack, elt::Int)
+    println("Pop $elt")
   end
 
   context_type = Int

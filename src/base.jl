@@ -15,6 +15,14 @@ end
 ## A Partially Compressed Block is composed of the signatures of its SubBlocks
 typealias Block{T} Vector{Signature{T}}
 
+# Constructor for a Signature (from a Block)
+function Signature{T}(block::Block{T})
+  context = block[1].context
+  first = block[1].first
+  last = block[end].last
+  Signature(first, last, context)
+end
+
 ## Each level of compressed Blocks (first and second) are stored in Levels
 typealias Levels{T} Vector{Block{T}}
 
