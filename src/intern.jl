@@ -91,21 +91,23 @@ function push_compressed!{T,D}(stack::CompressedStack{T,D}, lvl::Int)
     sign = Signature(stack.index, get(stack.context),input_copy)
     println(length(stack.first_partial))
     println("cpt=$cpt")
+
     println("lvl=$lvl ",stack.first_partial[2])
+
     push!(stack.first_partial[lvl], sign)
   else
     println("print test 3")
     top = read_top(stack.first_partial[lvl])
     start_block = top - mod(top - 1, dist)
-    δ = stack.index - start_block # distance of the new index and current block
+    δ = stack.index - start_block + 1 # distance of the new index and current block
     println("print test 3.1")
-    if δ < dist
+    if δ <= dist
       println("print test 4")
       # compress new element in the top of the current Block
       subblock = convert(Int, ceil(δ * stack.space / dist))
       println("subblock=$subblock")
       println("δ=$δ, dist/space=$(dist / stack.space)")
-      if mod(δ, dist / stack.space) == 0
+      if length(stack.first_partial[lvl]) < subblock
         println("print test 5")
         input_copy = deepcopy(stack.input)
         sign = Signature(stack.index, get(stack.context), input_copy)

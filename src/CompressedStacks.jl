@@ -20,7 +20,7 @@ include("intern.jl")
 function run(stack::CompressedStack)
   while !eof(stack.input)
     while !isempty(stack) && stack.pop_condition(stack)
-      # pop!(stack)
+      pop!(stack)
       println("Debugging pop/push")
     end
     println("id1=$(stack.index)")
