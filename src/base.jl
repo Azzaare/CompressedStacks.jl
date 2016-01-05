@@ -5,11 +5,12 @@ type Signature{T}
   first::Int
   last::Int
   context::T
+  input::IOStream
 end
 
 # Constructor for singleton signature
-function Signature{T}(index::Int, context::T)
-  Signature(index, index, context)
+function Signature{T}(index::Int, context::T, input::IOStream)
+  Signature(index, index, context, input)
 end
 
 ## A Partially Compressed Block is composed of the signatures of its SubBlocks
@@ -19,8 +20,9 @@ typealias Block{T} Vector{Signature{T}}
 function Signature{T}(block::Block{T})
   context = block[1].context
   first = block[1].first
+  input = block[1].input
   last = block[end].last
-  Signature(first, last, context)
+  Signature(first, last, context, input)
 end
 
 ## Each level of compressed Blocks (first and second) are stored in Levels
@@ -79,4 +81,13 @@ function CompressedStack(size::Int, space::Int, input::IOStream,
   CompressedStack(size, space, depth, input, output, push_condition,
   push_action, pop_condition, pop_action, first_partial, first_explicit,
   second_partial, second_explicit, compressed, index, context)
+end
+
+# Constructor for the reconstruction procedure
+function CompressedStack{T}(stack::CompressedStack, size::Int,
+  input::IOStream, context::T, index::Int)
+
+  CompressedStack(size, stack.space, input, stack.context_type, stack.data_type,
+  stack.push_action, stack.push_condition, stack.pop_action, stack.pop_condition;
+  index = index, context = Nullable{T}(context), stack.output)
 end

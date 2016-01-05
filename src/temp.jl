@@ -1,6 +1,7 @@
 function io_test()
   function condition_push(stack::CompressedStack, elt::Int)
-    line = readline(stack.input)
+    f = deepcopy(stack.input)
+    line = readline(f)
     aux = split(line)
     return convert(Bool, elt)
   end
@@ -21,7 +22,7 @@ function io_test()
   context_type = Int
   data_type = Int
 
-  name = "/home/jeff/.julia/v0.4/CompressedStacks/ioexample/input1"
+  name = "/home/azzaare/.julia/v0.4/CompressedStacks/ioexample/input1"
   stack = CompressedStack(name, action_pop, action_push, condition_pop,
   condition_push, context_type, data_type)
 

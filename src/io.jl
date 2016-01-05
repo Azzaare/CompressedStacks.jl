@@ -103,6 +103,7 @@ end
 
 # Get next element (before a push)
 function readinput{T,D}(stack::CompressedStack{T,D})
+  stack.index += 1
   line = readline(stack.input)
   aux = split(line)
   return parse(Int,aux[1])
