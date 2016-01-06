@@ -33,6 +33,12 @@ function string{T}(block::Block{T})
   return str
 end
 
+# Convert a Data{T} into a string
+
+function string{D}(elt::Data{D})
+  return "($(elt.index):=$(elt.data))"
+end
+
 # Convert a vector of partially compressed blocks into a string
 function string{T}(lvl::Levels{T})
   str = "[\t\t\t\t"
@@ -44,13 +50,13 @@ function string{T}(lvl::Levels{T})
 end
 
 # Convert a vector of explicit integral values into a string
-function string(explicit::Vector{Int})
+function string{D}(explicit::Vector{Data{D}})
   str = "["
   for (id,p) in enumerate(explicit)
     if id == 1
-      str *= "$p"
+      str *= string(p)
     else
-      str *= ",$p"
+      str *= ",$(string(p))"
     end
   end
   str *= "]"

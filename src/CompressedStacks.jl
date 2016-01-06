@@ -17,16 +17,31 @@ include("intern.jl")
 ## Specialized types of Compressed Stacks
 
 ## Function to run a CompressedStack similarly than for a classic stack
-function run(stack::CompressedStack)
+function run!(stack::CompressedStack)
   while !eof(stack.input)
     while !isempty(stack) && stack.pop_condition(stack)
+      println("Debugging pop")
+      print(stack)
       pop!(stack)
-      println("Debugging pop/push")
+      print(stack)
     end
-    println("id1=$(stack.index)")
     elt = readinput(stack)
     if stack.push_condition(stack, elt)
-      println("id2=$(stack.index)")
+      push!(stack, elt)
+    end
+  end
+end
+function run!(stack::CompressedStack, limit::Int)
+  while limit > 0
+    limit -= 1
+    while !isempty(stack) && stack.pop_condition(stack)
+      println("Debugging pop in reconstruction")
+      print(stack)
+      pop!(stack)
+      print(stack)
+    end
+    elt = readinput(stack)
+    if stack.push_condition(stack, elt)
       push!(stack, elt)
     end
   end

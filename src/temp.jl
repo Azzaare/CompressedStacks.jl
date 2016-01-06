@@ -7,12 +7,16 @@ function io_test()
   end
 
   function condition_pop(stack::CompressedStack)
-    return false
+    if stack.index >= 80
+      return true
+    else
+      return false
+    end
   end
 
   function action_push(stack::CompressedStack{Int,Int}, elt::Int)
     stack.context = Nullable(stack.index)
-    print(stack)
+    # print(stack)
   end
 
   function action_pop(stack::CompressedStack, elt::Int)
@@ -26,7 +30,5 @@ function io_test()
   stack = CompressedStack(name, action_pop, action_push, condition_pop,
   condition_push, context_type, data_type)
 
-  print(stack)
-  run(stack)
-  print(stack)
+  run!(stack)
 end

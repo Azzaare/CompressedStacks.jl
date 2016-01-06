@@ -28,6 +28,12 @@ end
 ## Each level of compressed Blocks (first and second) are stored in Levels
 typealias Levels{T} Vector{Block{T}}
 
+## Type Data to store the data and their index
+type Data{D}
+  data::D
+  index::Int
+end
+
 ## General CompressedStack (i.e. with parametric context T and data type D)
 # D can also be used as an index when the data type is too big
 type CompressedStack{T,D}
@@ -46,15 +52,18 @@ type CompressedStack{T,D}
   pop_action::Function
   # First Blocks
   first_partial::Levels{T} # Levels of partially compressed blocks
-  first_explicit::Vector{D}
+  first_explicit::Vector{Data{D}}
   # Second Blocks
   second_partial::Levels{T} # Levels of partially compressed blocks
-  second_explicit::Vector{D}
+  second_explicit::Vector{Data{D}}
   # Fully Compressed Block (only a signature possibly empty [Nullable])
   compressed::Nullable{Signature{T}}
   # Stack's running information
   index::Int # Stock the maximum index read in the input file
   context::Nullable{T} # Current context to use while making block signatures
+  # types
+  #context_type::DataType
+  #data_type::DataType
 end
 
 # General Constructor for CompressedStack
@@ -66,9 +75,9 @@ function CompressedStack(size::Int, space::Int, input::IOStream,
 
   depth = convert(Int,ceil(log(space, size - 0.1))) - 1
   compressed = Nullable{Signature{context_type}}()
-  first_explicit = Vector{data_type}()
+  first_explicit = Vector{Data{data_type}}()
   first_partial = Levels{context_type}()
-  second_explicit = Vector{data_type}()
+  second_explicit = Vector{Data{data_type}}()
   second_partial = Levels{context_type}()
 
   # Initialization of each Block at each level
@@ -84,10 +93,10 @@ function CompressedStack(size::Int, space::Int, input::IOStream,
 end
 
 # Constructor for the reconstruction procedure
-function CompressedStack{T}(stack::CompressedStack, size::Int,
+function CompressedStack{T,D}(stack::CompressedStack, size::Int,
   input::IOStream, context::T, index::Int)
 
-  CompressedStack(size, stack.space, input, stack.context_type, stack.data_type,
+  CompressedStack(size, stack.space, input, T, D,
   stack.push_action, stack.push_condition, stack.pop_action, stack.pop_condition;
-  index = index, context = Nullable{T}(context), stack.output)
+  index = index, context = Nullable{T}(context), output = Nullable{IOStream}())
 end
