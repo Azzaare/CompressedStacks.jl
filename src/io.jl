@@ -109,6 +109,7 @@ end
 
 # Get next element (before a push)
 function readinput{T,D}(stack::CompressedStack{T,D})
+  stack.copy_input = deepcopy(stack.input)
   stack.index += 1
   line = readline(stack.input)
   aux = split(line)

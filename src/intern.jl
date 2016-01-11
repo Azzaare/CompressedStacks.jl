@@ -7,8 +7,8 @@
 
 # Testing if a CompressedStack is empty
 function isempty(stack::CompressedStack)
-  bfirst = isempty(stack.first_partial[1])
-  bsecond = isempty(stack.second_partial[1])
+  bfirst = isempty(stack.first_partial) || isempty(stack.first_partial[1])
+  bsecond = isempty(stack.second_partial) || isempty(stack.second_partial[1])
   bcompressed = isnull(stack.compressed)
   return bfirst && bsecond && bcompressed
 end
@@ -27,7 +27,9 @@ function read_top{T}(block::Block{T})
 end
 
 function read_top{T}(stack::CompressedStack{T})
-  if isempty(stack.first_partial[1])
+  if isempty(stack.first_partial)
+    read_explicit(stack)
+  elseif isempty(stack.first_partial[1])
     return read_top(stack.second_partial[1])
   else
     return read_top(stack.first_partial[1])
@@ -36,6 +38,14 @@ end
 
 function read_bottom{T}(block::Block{T})
   return block[end].first
+end
+
+function read_explicit(stack::CompressedStack)
+  if isempty(stack.first_explicit)
+    stack.second_explicit[end].index
+  else
+    stack.first_explicit[end].index
+  end
 end
 
 function update_top!{T}(block::Block{T}, index::Int)
@@ -84,34 +94,39 @@ end
 # Function to push (possibly fully) compressed index of new data from input
 function push_compressed!{T,D}(stack::CompressedStack{T,D}, lvl::Int)
   p = stack.space^(lvl)
-  dist = stack.size / p
+  dist_block = stack.size / p
+  dist_subblock = dist_block / stack.space
 
   if isempty(stack, lvl)
-    input_copy = deepcopy(stack.input)
+    input_copy = deepcopy(stack.copy_input)
     sign = Signature(stack.index, get(stack.context),input_copy)
     push!(stack.first_partial[lvl], sign)
   else
     top = read_top(stack.first_partial[lvl])
-    start_block = top - mod(top - 1, dist)
-    δ = stack.index - start_block + 1 # distance of the new index and current block
-    if δ <= dist
+    start_block = top - mod(top - 1, dist_block)
+    # distance of the new index and current block
+    δ = stack.index - start_block + 1
+    if δ <= dist_block
+      # Distance with the current subblock
+      start_subblock = top - mod(top - 1, dist_subblock)
+      η = stack.index - start_subblock + 1
       # compress new element in the top of the current Block
-      subblock = convert(Int, ceil(δ * stack.space / dist))
-      if length(stack.first_partial[lvl]) < subblock
-        input_copy = deepcopy(stack.input)
+      if η <= dist_subblock
+        subblock = length(stack.first_partial[lvl])
+        update_top!(stack.first_partial[lvl], subblock, stack.index)
+      else
+        input_copy = deepcopy(stack.copy_input)
         sign = Signature(stack.index, get(stack.context), input_copy)
         push!(stack.first_partial[lvl], sign)
-      else
-        update_top!(stack.first_partial[lvl], subblock, stack.index)
       end
     else
       if lvl == 1
         compress!(stack, stack.compressed, stack.second_partial[1])
       end
       stack.second_partial[lvl] = stack.first_partial[lvl]
-      input_copy = deepcopy(stack.input)
+      input_copy = deepcopy(stack.copy_input)
       sign = Signature(stack.index, get(stack.context), input_copy)
-      stack.first_partial[lvl] = []
+      stack.first_partial[lvl] = [sign]
     end
   end
 end
@@ -146,16 +161,21 @@ function reconstruct!(stack::CompressedStack)
         return reconstruct!(stack, sign, lvl + 1)
       end
     end
+
   end
 end
 function reconstruct!(stack::CompressedStack, sign::Signature, lvl::Int)
   size = stack.space ^ (stack.depth + 1 - lvl)
-  aux = CompressedStack(stack, size, sign.input, sign.context, sign.first)
+  aux = CompressedStack(stack, size, sign.input, sign.context, sign.first - 1)
 
   run!(aux, sign.last - sign.first)
+  δ = stack.depth - aux.depth
 
-  for i in lvl:(stack.depth-1)
-    stack.second_partial[i] = aux.first_partial[i]
+  println("⇒   Auxiliary stack for reconstruction")
+  print(aux)
+
+  for i in 1:(aux.depth-1)
+    stack.second_partial[δ + i] = aux.first_partial[i]
   end
   if lvl == 1
     compress!(stack, aux.compressed, aux.second_partial[1])
@@ -164,11 +184,8 @@ function reconstruct!(stack::CompressedStack, sign::Signature, lvl::Int)
 end
 
 
-
-
 ## Functions that empty (pop) the element in partially compressed blocks
 function empty_first!(stack::CompressedStack, index::Int, lvl::Int)
-  println("empty first: index=$index, lvl=$lvl")
   pop!(stack.first_partial[lvl])
   if lvl > 1
     if length(stack.first_partial[lvl]) == 0
@@ -182,7 +199,6 @@ end
 
 
 function empty_second!(stack::CompressedStack, index::Int, lvl::Int)
-  println("empty second: index=$index, lvl=$lvl")
   if !isempty(stack.first_partial[lvl])
     empty_first!(stack, index, lvl)
   else
@@ -201,13 +217,11 @@ end
 ## Functions to propagate the index of the element that have been popped
 function propagate_first!(stack::CompressedStack, index::Int, lvl::Int)
   for i in 1:lvl
-    println("propagate first: index=$index, lvl=$i")
     update_top!(stack.first_partial[i], index)
   end
 end
 
 function propagate_second!(stack::CompressedStack, index::Int, lvl::Int)
-  println("propagate second: index=$index, lvl=$lvl")
   if !isempty(stack.first_partial[lvl])
     propagate_first!(stack, index, lvl)
   else
@@ -248,8 +262,11 @@ function pop!(stack::CompressedStack)
     pop_first!(stack)
   else
     if isempty(stack.second_explicit)
-      println("\n\n\nStart Debugging\n\n\n")
+      println("Starting reconstruction")
+      print(stack)
       reconstruct!(stack)
+      print(stack)
+      println("⟸   Reconstructed stack")
     end
     pop_second!(stack)
   end

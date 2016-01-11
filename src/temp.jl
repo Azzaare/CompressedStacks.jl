@@ -20,13 +20,13 @@ function io_test()
   end
 
   function action_pop(stack::CompressedStack, elt::Int)
-    println("Pop $elt")
+    println("Pop element : $elt")
   end
 
   context_type = Int
   data_type = Int
 
-  name = "/home/jeff/.julia/v0.4/CompressedStacks/ioexample/input1"
+  name = "/home/azzaare/.julia/v0.4/CompressedStacks/ioexample/input1"
   stack = CompressedStack(name, action_pop, action_push, condition_pop,
   condition_push, context_type, data_type)
 

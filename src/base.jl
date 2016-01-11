@@ -43,6 +43,7 @@ type CompressedStack{T,D}
   depth::Int # Depth (#levels of compression) based on size and space
   # IO
   input::IOStream # Pointer on a file to avoid memory consumption
+  copy_input::IOStream # Pointer to copy the input before the reading
   output::Nullable{IOStream} # Pointer to an optional (Nullable) output file
   # Functions defining the behavior of the stack
   # Those function should only take a CompressedStack as input
@@ -62,8 +63,8 @@ type CompressedStack{T,D}
   index::Int # Stock the maximum index read in the input file
   context::Nullable{T} # Current context to use while making block signatures
   # types
-  #context_type::DataType
-  #data_type::DataType
+  context_type::DataType
+  data_type::DataType
 end
 
 # General Constructor for CompressedStack
@@ -87,16 +88,17 @@ function CompressedStack(size::Int, space::Int, input::IOStream,
   end
 
   # Call to the basic constructor
-  CompressedStack(size, space, depth, input, output, push_condition,
+  CompressedStack(size, space, depth, input, input, output, push_condition,
   push_action, pop_condition, pop_action, first_partial, first_explicit,
-  second_partial, second_explicit, compressed, index, context)
+  second_partial, second_explicit, compressed, index, context,
+  context_type, data_type)
 end
 
 # Constructor for the reconstruction procedure
-function CompressedStack{T,D}(stack::CompressedStack, size::Int,
-  input::IOStream, context::T, index::Int)
+function CompressedStack(stack::CompressedStack, size::Int,
+  input::IOStream, context, index::Int)
 
-  CompressedStack(size, stack.space, input, T, D,
+  CompressedStack(size * stack.space, stack.space, input, stack.context_type, stack.data_type,
   stack.push_action, stack.push_condition, stack.pop_action, stack.pop_condition;
-  index = index, context = Nullable{T}(context), output = Nullable{IOStream}())
+  index = index, context = Nullable(context), output = Nullable{IOStream}())
 end
