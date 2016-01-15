@@ -181,6 +181,10 @@ function reconstruct!(stack::CompressedStack, sign::Signature, lvl::Int)
     compress!(stack, aux.compressed, aux.second_partial[1])
   end
   stack.second_explicit = aux.first_explicit
+
+  aux = 0
+  gc()
+
 end
 
 
