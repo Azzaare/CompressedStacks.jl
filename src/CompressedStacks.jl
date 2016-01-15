@@ -1,4 +1,5 @@
 ### Julia module for the Compressed Stack structure ###
+__precompile__() # Precompile option for the module. Is recompiled after changes
 module CompressedStacks
 
 ## Import/Export
