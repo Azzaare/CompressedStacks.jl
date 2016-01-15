@@ -1,0 +1,5209 @@
+Test IO
+⇒   Initial empty stack
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (second) explicit ->
+			Level 3		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					∅
+
+⇒   Push operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(1,1) ← 1]
+			Level 2		[(1,1) ← 1]
+			 ]
+		 (first) explicit ->
+			Level 3		[(1:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (second) explicit ->
+			Level 3		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					1
+
+⇒   Push operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(1,2) ← 1]
+			Level 2		[(1,2) ← 1]
+			 ]
+		 (first) explicit ->
+			Level 3		[(1:=1),(2:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (second) explicit ->
+			Level 3		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					2
+
+⇒   Push operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(1,4) ← 1]
+			Level 2		[(1,2) ← 1,(4,4) ← 4]
+			 ]
+		 (first) explicit ->
+			Level 3		[(4:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (second) explicit ->
+			Level 3		[(1:=1),(2:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					4
+
+⇒   Push operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(1,5) ← 1]
+			Level 2		[(1,2) ← 1,(4,5) ← 4]
+			 ]
+		 (first) explicit ->
+			Level 3		[(4:=1),(5:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (second) explicit ->
+			Level 3		[(1:=1),(2:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					5
+
+⇒   Push operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(1,6) ← 1]
+			Level 2		[(1,2) ← 1,(4,6) ← 4]
+			 ]
+		 (first) explicit ->
+			Level 3		[(4:=1),(5:=1),(6:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (second) explicit ->
+			Level 3		[(1:=1),(2:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					6
+
+⇒   Push operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(1,7) ← 1]
+			Level 2		[(1,2) ← 1,(4,6) ← 4,(7,7) ← 7]
+			 ]
+		 (first) explicit ->
+			Level 3		[(7:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (second) explicit ->
+			Level 3		[(4:=1),(5:=1),(6:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					7
+
+⇒   Push operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(1,8) ← 1]
+			Level 2		[(1,2) ← 1,(4,6) ← 4,(7,8) ← 7]
+			 ]
+		 (first) explicit ->
+			Level 3		[(7:=1),(8:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (second) explicit ->
+			Level 3		[(4:=1),(5:=1),(6:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					8
+
+⇒   Push operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1]
+			Level 2		[(1,2) ← 1,(4,6) ← 4,(7,9) ← 7]
+			 ]
+		 (first) explicit ->
+			Level 3		[(7:=1),(8:=1),(9:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (second) explicit ->
+			Level 3		[(4:=1),(5:=1),(6:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					9
+
+⇒   Push operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,10) ← 10]
+			Level 2		[(10,10) ← 10]
+			 ]
+		 (first) explicit ->
+			Level 3		[(10:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[(1,2) ← 1,(4,6) ← 4,(7,9) ← 7]
+			 ]
+		 (second) explicit ->
+			Level 3		[(7:=1),(8:=1),(9:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					10
+
+⇒   Push operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,11) ← 10]
+			Level 2		[(10,11) ← 10]
+			 ]
+		 (first) explicit ->
+			Level 3		[(10:=1),(11:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[(1,2) ← 1,(4,6) ← 4,(7,9) ← 7]
+			 ]
+		 (second) explicit ->
+			Level 3		[(7:=1),(8:=1),(9:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					11
+
+⇒   Push operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,17) ← 10]
+			Level 2		[(10,11) ← 10,(17,17) ← 17]
+			 ]
+		 (first) explicit ->
+			Level 3		[(17:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[(1,2) ← 1,(4,6) ← 4,(7,9) ← 7]
+			 ]
+		 (second) explicit ->
+			Level 3		[(10:=1),(11:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					17
+
+⇒   Push operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,18) ← 10]
+			Level 2		[(10,11) ← 10,(17,18) ← 17]
+			 ]
+		 (first) explicit ->
+			Level 3		[(17:=1),(18:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[(1,2) ← 1,(4,6) ← 4,(7,9) ← 7]
+			 ]
+		 (second) explicit ->
+			Level 3		[(10:=1),(11:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					18
+
+⇒   Push operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,18) ← 10,(19,19) ← 19]
+			Level 2		[(19,19) ← 19]
+			 ]
+		 (first) explicit ->
+			Level 3		[(19:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[(10,11) ← 10,(17,18) ← 17]
+			 ]
+		 (second) explicit ->
+			Level 3		[(17:=1),(18:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					19
+
+⇒   Push operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,18) ← 10,(19,20) ← 19]
+			Level 2		[(19,20) ← 19]
+			 ]
+		 (first) explicit ->
+			Level 3		[(19:=1),(20:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[(10,11) ← 10,(17,18) ← 17]
+			 ]
+		 (second) explicit ->
+			Level 3		[(17:=1),(18:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					20
+
+⇒   Push operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,18) ← 10,(19,21) ← 19]
+			Level 2		[(19,21) ← 19]
+			 ]
+		 (first) explicit ->
+			Level 3		[(19:=1),(20:=1),(21:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[(10,11) ← 10,(17,18) ← 17]
+			 ]
+		 (second) explicit ->
+			Level 3		[(17:=1),(18:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					21
+
+⇒   Push operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,18) ← 10,(19,24) ← 19]
+			Level 2		[(19,21) ← 19,(24,24) ← 24]
+			 ]
+		 (first) explicit ->
+			Level 3		[(24:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[(10,11) ← 10,(17,18) ← 17]
+			 ]
+		 (second) explicit ->
+			Level 3		[(19:=1),(20:=1),(21:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					24
+
+⇒   Push operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,18) ← 10,(19,27) ← 19]
+			Level 2		[(19,21) ← 19,(24,24) ← 24,(27,27) ← 27]
+			 ]
+		 (first) explicit ->
+			Level 3		[(27:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[(10,11) ← 10,(17,18) ← 17]
+			 ]
+		 (second) explicit ->
+			Level 3		[(24:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					27
+
+⇒   Push operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(28,28) ← 28]
+			Level 2		[(28,28) ← 28]
+			 ]
+		 (first) explicit ->
+			Level 3		[(28:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,18) ← 10,(19,27) ← 19]
+			Level 2		[(19,21) ← 19,(24,24) ← 24,(27,27) ← 27]
+			 ]
+		 (second) explicit ->
+			Level 3		[(27:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					28
+
+⇒   Push operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(28,29) ← 28]
+			Level 2		[(28,29) ← 28]
+			 ]
+		 (first) explicit ->
+			Level 3		[(28:=1),(29:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,18) ← 10,(19,27) ← 19]
+			Level 2		[(19,21) ← 19,(24,24) ← 24,(27,27) ← 27]
+			 ]
+		 (second) explicit ->
+			Level 3		[(27:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					29
+
+⇒   Push operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(28,31) ← 28]
+			Level 2		[(28,29) ← 28,(31,31) ← 31]
+			 ]
+		 (first) explicit ->
+			Level 3		[(31:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,18) ← 10,(19,27) ← 19]
+			Level 2		[(19,21) ← 19,(24,24) ← 24,(27,27) ← 27]
+			 ]
+		 (second) explicit ->
+			Level 3		[(28:=1),(29:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					31
+
+⇒   Push operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(28,32) ← 28]
+			Level 2		[(28,29) ← 28,(31,32) ← 31]
+			 ]
+		 (first) explicit ->
+			Level 3		[(31:=1),(32:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,18) ← 10,(19,27) ← 19]
+			Level 2		[(19,21) ← 19,(24,24) ← 24,(27,27) ← 27]
+			 ]
+		 (second) explicit ->
+			Level 3		[(28:=1),(29:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					32
+
+⇒   Push operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(28,33) ← 28]
+			Level 2		[(28,29) ← 28,(31,33) ← 31]
+			 ]
+		 (first) explicit ->
+			Level 3		[(31:=1),(32:=1),(33:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,18) ← 10,(19,27) ← 19]
+			Level 2		[(19,21) ← 19,(24,24) ← 24,(27,27) ← 27]
+			 ]
+		 (second) explicit ->
+			Level 3		[(28:=1),(29:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					33
+
+⇒   Push operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(28,34) ← 28]
+			Level 2		[(28,29) ← 28,(31,33) ← 31,(34,34) ← 34]
+			 ]
+		 (first) explicit ->
+			Level 3		[(34:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,18) ← 10,(19,27) ← 19]
+			Level 2		[(19,21) ← 19,(24,24) ← 24,(27,27) ← 27]
+			 ]
+		 (second) explicit ->
+			Level 3		[(31:=1),(32:=1),(33:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					34
+
+⇒   Push operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(28,35) ← 28]
+			Level 2		[(28,29) ← 28,(31,33) ← 31,(34,35) ← 34]
+			 ]
+		 (first) explicit ->
+			Level 3		[(34:=1),(35:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,18) ← 10,(19,27) ← 19]
+			Level 2		[(19,21) ← 19,(24,24) ← 24,(27,27) ← 27]
+			 ]
+		 (second) explicit ->
+			Level 3		[(31:=1),(32:=1),(33:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					35
+
+⇒   Push operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28]
+			Level 2		[(28,29) ← 28,(31,33) ← 31,(34,36) ← 34]
+			 ]
+		 (first) explicit ->
+			Level 3		[(34:=1),(35:=1),(36:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,18) ← 10,(19,27) ← 19]
+			Level 2		[(19,21) ← 19,(24,24) ← 24,(27,27) ← 27]
+			 ]
+		 (second) explicit ->
+			Level 3		[(31:=1),(32:=1),(33:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					36
+
+⇒   Push operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,38) ← 38]
+			Level 2		[(38,38) ← 38]
+			 ]
+		 (first) explicit ->
+			Level 3		[(38:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,18) ← 10,(19,27) ← 19]
+			Level 2		[(28,29) ← 28,(31,33) ← 31,(34,36) ← 34]
+			 ]
+		 (second) explicit ->
+			Level 3		[(34:=1),(35:=1),(36:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					38
+
+⇒   Push operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,40) ← 38]
+			Level 2		[(38,38) ← 38,(40,40) ← 40]
+			 ]
+		 (first) explicit ->
+			Level 3		[(40:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,18) ← 10,(19,27) ← 19]
+			Level 2		[(28,29) ← 28,(31,33) ← 31,(34,36) ← 34]
+			 ]
+		 (second) explicit ->
+			Level 3		[(38:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					40
+
+⇒   Push operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,43) ← 38]
+			Level 2		[(38,38) ← 38,(40,40) ← 40,(43,43) ← 43]
+			 ]
+		 (first) explicit ->
+			Level 3		[(43:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,18) ← 10,(19,27) ← 19]
+			Level 2		[(28,29) ← 28,(31,33) ← 31,(34,36) ← 34]
+			 ]
+		 (second) explicit ->
+			Level 3		[(40:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					43
+
+⇒   Push operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,45) ← 38]
+			Level 2		[(38,38) ← 38,(40,40) ← 40,(43,45) ← 43]
+			 ]
+		 (first) explicit ->
+			Level 3		[(43:=1),(45:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,18) ← 10,(19,27) ← 19]
+			Level 2		[(28,29) ← 28,(31,33) ← 31,(34,36) ← 34]
+			 ]
+		 (second) explicit ->
+			Level 3		[(40:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					45
+
+⇒   Push operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,45) ← 38,(46,46) ← 46]
+			Level 2		[(46,46) ← 46]
+			 ]
+		 (first) explicit ->
+			Level 3		[(46:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,18) ← 10,(19,27) ← 19]
+			Level 2		[(38,38) ← 38,(40,40) ← 40,(43,45) ← 43]
+			 ]
+		 (second) explicit ->
+			Level 3		[(43:=1),(45:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					46
+
+⇒   Push operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,45) ← 38,(46,47) ← 46]
+			Level 2		[(46,47) ← 46]
+			 ]
+		 (first) explicit ->
+			Level 3		[(46:=1),(47:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,18) ← 10,(19,27) ← 19]
+			Level 2		[(38,38) ← 38,(40,40) ← 40,(43,45) ← 43]
+			 ]
+		 (second) explicit ->
+			Level 3		[(43:=1),(45:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					47
+
+⇒   Push operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,45) ← 38,(46,48) ← 46]
+			Level 2		[(46,48) ← 46]
+			 ]
+		 (first) explicit ->
+			Level 3		[(46:=1),(47:=1),(48:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,18) ← 10,(19,27) ← 19]
+			Level 2		[(38,38) ← 38,(40,40) ← 40,(43,45) ← 43]
+			 ]
+		 (second) explicit ->
+			Level 3		[(43:=1),(45:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					48
+
+⇒   Push operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,45) ← 38,(46,49) ← 46]
+			Level 2		[(46,48) ← 46,(49,49) ← 49]
+			 ]
+		 (first) explicit ->
+			Level 3		[(49:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,18) ← 10,(19,27) ← 19]
+			Level 2		[(38,38) ← 38,(40,40) ← 40,(43,45) ← 43]
+			 ]
+		 (second) explicit ->
+			Level 3		[(46:=1),(47:=1),(48:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					49
+
+⇒   Push operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,45) ← 38,(46,50) ← 46]
+			Level 2		[(46,48) ← 46,(49,50) ← 49]
+			 ]
+		 (first) explicit ->
+			Level 3		[(49:=1),(50:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,18) ← 10,(19,27) ← 19]
+			Level 2		[(38,38) ← 38,(40,40) ← 40,(43,45) ← 43]
+			 ]
+		 (second) explicit ->
+			Level 3		[(46:=1),(47:=1),(48:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					50
+
+⇒   Push operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,45) ← 38,(46,51) ← 46]
+			Level 2		[(46,48) ← 46,(49,51) ← 49]
+			 ]
+		 (first) explicit ->
+			Level 3		[(49:=1),(50:=1),(51:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,18) ← 10,(19,27) ← 19]
+			Level 2		[(38,38) ← 38,(40,40) ← 40,(43,45) ← 43]
+			 ]
+		 (second) explicit ->
+			Level 3		[(46:=1),(47:=1),(48:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					51
+
+⇒   Push operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,45) ← 38,(46,52) ← 46]
+			Level 2		[(46,48) ← 46,(49,51) ← 49,(52,52) ← 52]
+			 ]
+		 (first) explicit ->
+			Level 3		[(52:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,18) ← 10,(19,27) ← 19]
+			Level 2		[(38,38) ← 38,(40,40) ← 40,(43,45) ← 43]
+			 ]
+		 (second) explicit ->
+			Level 3		[(49:=1),(50:=1),(51:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					52
+
+⇒   Push operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,45) ← 38,(46,53) ← 46]
+			Level 2		[(46,48) ← 46,(49,51) ← 49,(52,53) ← 52]
+			 ]
+		 (first) explicit ->
+			Level 3		[(52:=1),(53:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,18) ← 10,(19,27) ← 19]
+			Level 2		[(38,38) ← 38,(40,40) ← 40,(43,45) ← 43]
+			 ]
+		 (second) explicit ->
+			Level 3		[(49:=1),(50:=1),(51:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					53
+
+⇒   Push operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,45) ← 38,(46,54) ← 46]
+			Level 2		[(46,48) ← 46,(49,51) ← 49,(52,54) ← 52]
+			 ]
+		 (first) explicit ->
+			Level 3		[(52:=1),(53:=1),(54:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,18) ← 10,(19,27) ← 19]
+			Level 2		[(38,38) ← 38,(40,40) ← 40,(43,45) ← 43]
+			 ]
+		 (second) explicit ->
+			Level 3		[(49:=1),(50:=1),(51:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					54
+
+⇒   Push operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(58,58) ← 58]
+			Level 2		[(58,58) ← 58]
+			 ]
+		 (first) explicit ->
+			Level 3		[(58:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,45) ← 38,(46,54) ← 46]
+			Level 2		[(46,48) ← 46,(49,51) ← 49,(52,54) ← 52]
+			 ]
+		 (second) explicit ->
+			Level 3		[(52:=1),(53:=1),(54:=1)]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					58
+
+⇒   Push operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(58,59) ← 58]
+			Level 2		[(58,59) ← 58]
+			 ]
+		 (first) explicit ->
+			Level 3		[(58:=1),(59:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,45) ← 38,(46,54) ← 46]
+			Level 2		[(46,48) ← 46,(49,51) ← 49,(52,54) ← 52]
+			 ]
+		 (second) explicit ->
+			Level 3		[(52:=1),(53:=1),(54:=1)]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					59
+
+⇒   Push operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(58,60) ← 58]
+			Level 2		[(58,60) ← 58]
+			 ]
+		 (first) explicit ->
+			Level 3		[(58:=1),(59:=1),(60:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,45) ← 38,(46,54) ← 46]
+			Level 2		[(46,48) ← 46,(49,51) ← 49,(52,54) ← 52]
+			 ]
+		 (second) explicit ->
+			Level 3		[(52:=1),(53:=1),(54:=1)]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					60
+
+⇒   Push operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(58,61) ← 58]
+			Level 2		[(58,60) ← 58,(61,61) ← 61]
+			 ]
+		 (first) explicit ->
+			Level 3		[(61:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,45) ← 38,(46,54) ← 46]
+			Level 2		[(46,48) ← 46,(49,51) ← 49,(52,54) ← 52]
+			 ]
+		 (second) explicit ->
+			Level 3		[(58:=1),(59:=1),(60:=1)]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					61
+
+⇒   Push operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(58,62) ← 58]
+			Level 2		[(58,60) ← 58,(61,62) ← 61]
+			 ]
+		 (first) explicit ->
+			Level 3		[(61:=1),(62:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,45) ← 38,(46,54) ← 46]
+			Level 2		[(46,48) ← 46,(49,51) ← 49,(52,54) ← 52]
+			 ]
+		 (second) explicit ->
+			Level 3		[(58:=1),(59:=1),(60:=1)]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					62
+
+⇒   Push operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(58,63) ← 58]
+			Level 2		[(58,60) ← 58,(61,63) ← 61]
+			 ]
+		 (first) explicit ->
+			Level 3		[(61:=1),(62:=1),(63:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,45) ← 38,(46,54) ← 46]
+			Level 2		[(46,48) ← 46,(49,51) ← 49,(52,54) ← 52]
+			 ]
+		 (second) explicit ->
+			Level 3		[(58:=1),(59:=1),(60:=1)]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					63
+
+⇒   Push operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(58,63) ← 58,(64,64) ← 64]
+			Level 2		[(64,64) ← 64]
+			 ]
+		 (first) explicit ->
+			Level 3		[(64:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,45) ← 38,(46,54) ← 46]
+			Level 2		[(58,60) ← 58,(61,63) ← 61]
+			 ]
+		 (second) explicit ->
+			Level 3		[(61:=1),(62:=1),(63:=1)]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					64
+
+⇒   Push operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(58,63) ← 58,(64,65) ← 64]
+			Level 2		[(64,65) ← 64]
+			 ]
+		 (first) explicit ->
+			Level 3		[(64:=1),(65:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,45) ← 38,(46,54) ← 46]
+			Level 2		[(58,60) ← 58,(61,63) ← 61]
+			 ]
+		 (second) explicit ->
+			Level 3		[(61:=1),(62:=1),(63:=1)]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+Pop element : 1
+⇒   Pop operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(58,63) ← 58,(64,64) ← 64]
+			Level 2		[(64,64) ← 64]
+			 ]
+		 (first) explicit ->
+			Level 3		[(64:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,45) ← 38,(46,54) ← 46]
+			Level 2		[(58,60) ← 58,(61,63) ← 61]
+			 ]
+		 (second) explicit ->
+			Level 3		[(61:=1),(62:=1),(63:=1)]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+Pop element : 1
+⇒   Pop operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(58,63) ← 58]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,45) ← 38,(46,54) ← 46]
+			Level 2		[(58,60) ← 58,(61,63) ← 61]
+			 ]
+		 (second) explicit ->
+			Level 3		[(61:=1),(62:=1),(63:=1)]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+Pop element : 1
+⇒   Pop operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(58,62) ← 58]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,45) ← 38,(46,54) ← 46]
+			Level 2		[(58,60) ← 58,(61,62) ← 61]
+			 ]
+		 (second) explicit ->
+			Level 3		[(61:=1),(62:=1)]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+Pop element : 1
+⇒   Pop operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(58,61) ← 58]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,45) ← 38,(46,54) ← 46]
+			Level 2		[(58,60) ← 58,(61,61) ← 61]
+			 ]
+		 (second) explicit ->
+			Level 3		[(61:=1)]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+Pop element : 1
+⇒   Pop operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(58,60) ← 58]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,45) ← 38,(46,54) ← 46]
+			Level 2		[(58,60) ← 58]
+			 ]
+		 (second) explicit ->
+			Level 3		[]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+Starting reconstruction
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(58,60) ← 58]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,45) ← 38,(46,54) ← 46]
+			Level 2		[(58,60) ← 58]
+			 ]
+		 (second) explicit ->
+			Level 3		[]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=9, p=3, and h=1
+	 First:
+		 (first) partially compressed ->
+			 [				
+			 ]
+		 (first) explicit ->
+			Level 1		[(58:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			 ]
+		 (second) explicit ->
+			Level 1		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					58
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=9, p=3, and h=1
+	 First:
+		 (first) partially compressed ->
+			 [				
+			 ]
+		 (first) explicit ->
+			Level 1		[(58:=1),(59:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			 ]
+		 (second) explicit ->
+			Level 1		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					59
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=9, p=3, and h=1
+	 First:
+		 (first) partially compressed ->
+			 [				
+			 ]
+		 (first) explicit ->
+			Level 1		[(58:=1),(59:=1),(60:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			 ]
+		 (second) explicit ->
+			Level 1		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					60
+
+⇒ Final stack
+⇒   Auxiliary stack for reconstruction
+Compressed Stack with n=9, p=3, and h=1
+	 First:
+		 (first) partially compressed ->
+			 [				
+			 ]
+		 (first) explicit ->
+			Level 1		[(58:=1),(59:=1),(60:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			 ]
+		 (second) explicit ->
+			Level 1		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					60
+
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(58,60) ← 58]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,45) ← 38,(46,54) ← 46]
+			Level 2		[(58,60) ← 58]
+			 ]
+		 (second) explicit ->
+			Level 3		[(58:=1),(59:=1),(60:=1)]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+⟸   Reconstructed stack
+Pop element : 1
+⇒   Pop operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(58,59) ← 58]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,45) ← 38,(46,54) ← 46]
+			Level 2		[(58,59) ← 58]
+			 ]
+		 (second) explicit ->
+			Level 3		[(58:=1),(59:=1)]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+Pop element : 1
+⇒   Pop operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(58,58) ← 58]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,45) ← 38,(46,54) ← 46]
+			Level 2		[(58,58) ← 58]
+			 ]
+		 (second) explicit ->
+			Level 3		[(58:=1)]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+Pop element : 1
+⇒   Pop operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,45) ← 38,(46,54) ← 46]
+			Level 2		[]
+			 ]
+		 (second) explicit ->
+			Level 3		[]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+Starting reconstruction
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,45) ← 38,(46,54) ← 46]
+			Level 2		[]
+			 ]
+		 (second) explicit ->
+			Level 3		[]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=27, p=3, and h=2
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(46,46) ← 46]
+			 ]
+		 (first) explicit ->
+			Level 2		[(46:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			 ]
+		 (second) explicit ->
+			Level 2		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					46
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=27, p=3, and h=2
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(46,47) ← 46]
+			 ]
+		 (first) explicit ->
+			Level 2		[(46:=1),(47:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			 ]
+		 (second) explicit ->
+			Level 2		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					47
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=27, p=3, and h=2
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(46,48) ← 46]
+			 ]
+		 (first) explicit ->
+			Level 2		[(46:=1),(47:=1),(48:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			 ]
+		 (second) explicit ->
+			Level 2		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					48
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=27, p=3, and h=2
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(46,48) ← 46,(49,49) ← 49]
+			 ]
+		 (first) explicit ->
+			Level 2		[(49:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			 ]
+		 (second) explicit ->
+			Level 2		[(46:=1),(47:=1),(48:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					49
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=27, p=3, and h=2
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(46,48) ← 46,(49,50) ← 49]
+			 ]
+		 (first) explicit ->
+			Level 2		[(49:=1),(50:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			 ]
+		 (second) explicit ->
+			Level 2		[(46:=1),(47:=1),(48:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					50
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=27, p=3, and h=2
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(46,48) ← 46,(49,51) ← 49]
+			 ]
+		 (first) explicit ->
+			Level 2		[(49:=1),(50:=1),(51:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			 ]
+		 (second) explicit ->
+			Level 2		[(46:=1),(47:=1),(48:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					51
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=27, p=3, and h=2
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(46,48) ← 46,(49,51) ← 49,(52,52) ← 52]
+			 ]
+		 (first) explicit ->
+			Level 2		[(52:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			 ]
+		 (second) explicit ->
+			Level 2		[(49:=1),(50:=1),(51:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					52
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=27, p=3, and h=2
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(46,48) ← 46,(49,51) ← 49,(52,53) ← 52]
+			 ]
+		 (first) explicit ->
+			Level 2		[(52:=1),(53:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			 ]
+		 (second) explicit ->
+			Level 2		[(49:=1),(50:=1),(51:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					53
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=27, p=3, and h=2
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(46,48) ← 46,(49,51) ← 49,(52,54) ← 52]
+			 ]
+		 (first) explicit ->
+			Level 2		[(52:=1),(53:=1),(54:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			 ]
+		 (second) explicit ->
+			Level 2		[(49:=1),(50:=1),(51:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					54
+
+⇒ Final stack
+⇒   Auxiliary stack for reconstruction
+Compressed Stack with n=27, p=3, and h=2
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(46,48) ← 46,(49,51) ← 49,(52,54) ← 52]
+			 ]
+		 (first) explicit ->
+			Level 2		[(52:=1),(53:=1),(54:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			 ]
+		 (second) explicit ->
+			Level 2		[(49:=1),(50:=1),(51:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					54
+
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,45) ← 38,(46,54) ← 46]
+			Level 2		[(46,48) ← 46,(49,51) ← 49,(52,54) ← 52]
+			 ]
+		 (second) explicit ->
+			Level 3		[(52:=1),(53:=1),(54:=1)]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+⟸   Reconstructed stack
+Pop element : 1
+⇒   Pop operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,45) ← 38,(46,53) ← 46]
+			Level 2		[(46,48) ← 46,(49,51) ← 49,(52,53) ← 52]
+			 ]
+		 (second) explicit ->
+			Level 3		[(52:=1),(53:=1)]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+Pop element : 1
+⇒   Pop operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,45) ← 38,(46,52) ← 46]
+			Level 2		[(46,48) ← 46,(49,51) ← 49,(52,52) ← 52]
+			 ]
+		 (second) explicit ->
+			Level 3		[(52:=1)]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+Pop element : 1
+⇒   Pop operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,45) ← 38,(46,51) ← 46]
+			Level 2		[(46,48) ← 46,(49,51) ← 49]
+			 ]
+		 (second) explicit ->
+			Level 3		[]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+Starting reconstruction
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,45) ← 38,(46,51) ← 46]
+			Level 2		[(46,48) ← 46,(49,51) ← 49]
+			 ]
+		 (second) explicit ->
+			Level 3		[]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=9, p=3, and h=1
+	 First:
+		 (first) partially compressed ->
+			 [				
+			 ]
+		 (first) explicit ->
+			Level 1		[(49:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			 ]
+		 (second) explicit ->
+			Level 1		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					49
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=9, p=3, and h=1
+	 First:
+		 (first) partially compressed ->
+			 [				
+			 ]
+		 (first) explicit ->
+			Level 1		[(49:=1),(50:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			 ]
+		 (second) explicit ->
+			Level 1		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					50
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=9, p=3, and h=1
+	 First:
+		 (first) partially compressed ->
+			 [				
+			 ]
+		 (first) explicit ->
+			Level 1		[(49:=1),(50:=1),(51:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			 ]
+		 (second) explicit ->
+			Level 1		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					51
+
+⇒ Final stack
+⇒   Auxiliary stack for reconstruction
+Compressed Stack with n=9, p=3, and h=1
+	 First:
+		 (first) partially compressed ->
+			 [				
+			 ]
+		 (first) explicit ->
+			Level 1		[(49:=1),(50:=1),(51:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			 ]
+		 (second) explicit ->
+			Level 1		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					51
+
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,45) ← 38,(46,51) ← 46]
+			Level 2		[(46,48) ← 46,(49,51) ← 49]
+			 ]
+		 (second) explicit ->
+			Level 3		[(49:=1),(50:=1),(51:=1)]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+⟸   Reconstructed stack
+Pop element : 1
+⇒   Pop operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,45) ← 38,(46,50) ← 46]
+			Level 2		[(46,48) ← 46,(49,50) ← 49]
+			 ]
+		 (second) explicit ->
+			Level 3		[(49:=1),(50:=1)]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+Pop element : 1
+⇒   Pop operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,45) ← 38,(46,49) ← 46]
+			Level 2		[(46,48) ← 46,(49,49) ← 49]
+			 ]
+		 (second) explicit ->
+			Level 3		[(49:=1)]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+Pop element : 1
+⇒   Pop operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,45) ← 38,(46,48) ← 46]
+			Level 2		[(46,48) ← 46]
+			 ]
+		 (second) explicit ->
+			Level 3		[]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+Starting reconstruction
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,45) ← 38,(46,48) ← 46]
+			Level 2		[(46,48) ← 46]
+			 ]
+		 (second) explicit ->
+			Level 3		[]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=9, p=3, and h=1
+	 First:
+		 (first) partially compressed ->
+			 [				
+			 ]
+		 (first) explicit ->
+			Level 1		[(46:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			 ]
+		 (second) explicit ->
+			Level 1		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					46
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=9, p=3, and h=1
+	 First:
+		 (first) partially compressed ->
+			 [				
+			 ]
+		 (first) explicit ->
+			Level 1		[(46:=1),(47:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			 ]
+		 (second) explicit ->
+			Level 1		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					47
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=9, p=3, and h=1
+	 First:
+		 (first) partially compressed ->
+			 [				
+			 ]
+		 (first) explicit ->
+			Level 1		[(46:=1),(47:=1),(48:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			 ]
+		 (second) explicit ->
+			Level 1		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					48
+
+⇒ Final stack
+⇒   Auxiliary stack for reconstruction
+Compressed Stack with n=9, p=3, and h=1
+	 First:
+		 (first) partially compressed ->
+			 [				
+			 ]
+		 (first) explicit ->
+			Level 1		[(46:=1),(47:=1),(48:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			 ]
+		 (second) explicit ->
+			Level 1		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					48
+
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,45) ← 38,(46,48) ← 46]
+			Level 2		[(46,48) ← 46]
+			 ]
+		 (second) explicit ->
+			Level 3		[(46:=1),(47:=1),(48:=1)]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+⟸   Reconstructed stack
+Pop element : 1
+⇒   Pop operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,45) ← 38,(46,47) ← 46]
+			Level 2		[(46,47) ← 46]
+			 ]
+		 (second) explicit ->
+			Level 3		[(46:=1),(47:=1)]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+Pop element : 1
+⇒   Pop operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,45) ← 38,(46,46) ← 46]
+			Level 2		[(46,46) ← 46]
+			 ]
+		 (second) explicit ->
+			Level 3		[(46:=1)]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+Pop element : 1
+⇒   Pop operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,45) ← 38]
+			Level 2		[]
+			 ]
+		 (second) explicit ->
+			Level 3		[]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+Starting reconstruction
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,45) ← 38]
+			Level 2		[]
+			 ]
+		 (second) explicit ->
+			Level 3		[]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=27, p=3, and h=2
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(38,38) ← 38]
+			 ]
+		 (first) explicit ->
+			Level 2		[(38:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			 ]
+		 (second) explicit ->
+			Level 2		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					38
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=27, p=3, and h=2
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(38,38) ← 38,(40,40) ← 40]
+			 ]
+		 (first) explicit ->
+			Level 2		[(40:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			 ]
+		 (second) explicit ->
+			Level 2		[(38:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					40
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=27, p=3, and h=2
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(38,38) ← 38,(40,40) ← 40,(43,43) ← 43]
+			 ]
+		 (first) explicit ->
+			Level 2		[(43:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			 ]
+		 (second) explicit ->
+			Level 2		[(40:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					43
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=27, p=3, and h=2
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(38,38) ← 38,(40,40) ← 40,(43,45) ← 43]
+			 ]
+		 (first) explicit ->
+			Level 2		[(43:=1),(45:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			 ]
+		 (second) explicit ->
+			Level 2		[(40:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					45
+
+⇒ Final stack
+⇒   Auxiliary stack for reconstruction
+Compressed Stack with n=27, p=3, and h=2
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(38,38) ← 38,(40,40) ← 40,(43,45) ← 43]
+			 ]
+		 (first) explicit ->
+			Level 2		[(43:=1),(45:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			 ]
+		 (second) explicit ->
+			Level 2		[(40:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					45
+
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,45) ← 38]
+			Level 2		[(38,38) ← 38,(40,40) ← 40,(43,45) ← 43]
+			 ]
+		 (second) explicit ->
+			Level 3		[(43:=1),(45:=1)]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+⟸   Reconstructed stack
+Pop element : 1
+⇒   Pop operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,43) ← 38]
+			Level 2		[(38,38) ← 38,(40,40) ← 40,(43,43) ← 43]
+			 ]
+		 (second) explicit ->
+			Level 3		[(43:=1)]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+Pop element : 1
+⇒   Pop operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,40) ← 38]
+			Level 2		[(38,38) ← 38,(40,40) ← 40]
+			 ]
+		 (second) explicit ->
+			Level 3		[]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+Starting reconstruction
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,40) ← 38]
+			Level 2		[(38,38) ← 38,(40,40) ← 40]
+			 ]
+		 (second) explicit ->
+			Level 3		[]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=9, p=3, and h=1
+	 First:
+		 (first) partially compressed ->
+			 [				
+			 ]
+		 (first) explicit ->
+			Level 1		[(40:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			 ]
+		 (second) explicit ->
+			Level 1		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					40
+
+⇒ Final stack
+⇒   Auxiliary stack for reconstruction
+Compressed Stack with n=9, p=3, and h=1
+	 First:
+		 (first) partially compressed ->
+			 [				
+			 ]
+		 (first) explicit ->
+			Level 1		[(40:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			 ]
+		 (second) explicit ->
+			Level 1		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					40
+
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,40) ← 38]
+			Level 2		[(38,38) ← 38,(40,40) ← 40]
+			 ]
+		 (second) explicit ->
+			Level 3		[(40:=1)]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+⟸   Reconstructed stack
+Pop element : 1
+⇒   Pop operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,38) ← 38]
+			Level 2		[(38,38) ← 38]
+			 ]
+		 (second) explicit ->
+			Level 3		[]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+Starting reconstruction
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,38) ← 38]
+			Level 2		[(38,38) ← 38]
+			 ]
+		 (second) explicit ->
+			Level 3		[]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=9, p=3, and h=1
+	 First:
+		 (first) partially compressed ->
+			 [				
+			 ]
+		 (first) explicit ->
+			Level 1		[(38:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			 ]
+		 (second) explicit ->
+			Level 1		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					38
+
+⇒ Final stack
+⇒   Auxiliary stack for reconstruction
+Compressed Stack with n=9, p=3, and h=1
+	 First:
+		 (first) partially compressed ->
+			 [				
+			 ]
+		 (first) explicit ->
+			Level 1		[(38:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			 ]
+		 (second) explicit ->
+			Level 1		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					38
+
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28,(38,38) ← 38]
+			Level 2		[(38,38) ← 38]
+			 ]
+		 (second) explicit ->
+			Level 3		[(38:=1)]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+⟸   Reconstructed stack
+Pop element : 1
+⇒   Pop operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28]
+			Level 2		[]
+			 ]
+		 (second) explicit ->
+			Level 3		[]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+Starting reconstruction
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28]
+			Level 2		[]
+			 ]
+		 (second) explicit ->
+			Level 3		[]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=27, p=3, and h=2
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(28,28) ← 28]
+			 ]
+		 (first) explicit ->
+			Level 2		[(28:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			 ]
+		 (second) explicit ->
+			Level 2		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					28
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=27, p=3, and h=2
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(28,29) ← 28]
+			 ]
+		 (first) explicit ->
+			Level 2		[(28:=1),(29:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			 ]
+		 (second) explicit ->
+			Level 2		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					29
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=27, p=3, and h=2
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(28,29) ← 28,(31,31) ← 31]
+			 ]
+		 (first) explicit ->
+			Level 2		[(31:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			 ]
+		 (second) explicit ->
+			Level 2		[(28:=1),(29:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					31
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=27, p=3, and h=2
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(28,29) ← 28,(31,32) ← 31]
+			 ]
+		 (first) explicit ->
+			Level 2		[(31:=1),(32:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			 ]
+		 (second) explicit ->
+			Level 2		[(28:=1),(29:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					32
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=27, p=3, and h=2
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(28,29) ← 28,(31,33) ← 31]
+			 ]
+		 (first) explicit ->
+			Level 2		[(31:=1),(32:=1),(33:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			 ]
+		 (second) explicit ->
+			Level 2		[(28:=1),(29:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					33
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=27, p=3, and h=2
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(28,29) ← 28,(31,33) ← 31,(34,34) ← 34]
+			 ]
+		 (first) explicit ->
+			Level 2		[(34:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			 ]
+		 (second) explicit ->
+			Level 2		[(31:=1),(32:=1),(33:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					34
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=27, p=3, and h=2
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(28,29) ← 28,(31,33) ← 31,(34,35) ← 34]
+			 ]
+		 (first) explicit ->
+			Level 2		[(34:=1),(35:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			 ]
+		 (second) explicit ->
+			Level 2		[(31:=1),(32:=1),(33:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					35
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=27, p=3, and h=2
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(28,29) ← 28,(31,33) ← 31,(34,36) ← 34]
+			 ]
+		 (first) explicit ->
+			Level 2		[(34:=1),(35:=1),(36:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			 ]
+		 (second) explicit ->
+			Level 2		[(31:=1),(32:=1),(33:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					36
+
+⇒ Final stack
+⇒   Auxiliary stack for reconstruction
+Compressed Stack with n=27, p=3, and h=2
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(28,29) ← 28,(31,33) ← 31,(34,36) ← 34]
+			 ]
+		 (first) explicit ->
+			Level 2		[(34:=1),(35:=1),(36:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			 ]
+		 (second) explicit ->
+			Level 2		[(31:=1),(32:=1),(33:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					36
+
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,36) ← 28]
+			Level 2		[(28,29) ← 28,(31,33) ← 31,(34,36) ← 34]
+			 ]
+		 (second) explicit ->
+			Level 3		[(34:=1),(35:=1),(36:=1)]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+⟸   Reconstructed stack
+Pop element : 1
+⇒   Pop operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,35) ← 28]
+			Level 2		[(28,29) ← 28,(31,33) ← 31,(34,35) ← 34]
+			 ]
+		 (second) explicit ->
+			Level 3		[(34:=1),(35:=1)]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+Pop element : 1
+⇒   Pop operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,34) ← 28]
+			Level 2		[(28,29) ← 28,(31,33) ← 31,(34,34) ← 34]
+			 ]
+		 (second) explicit ->
+			Level 3		[(34:=1)]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+Pop element : 1
+⇒   Pop operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,33) ← 28]
+			Level 2		[(28,29) ← 28,(31,33) ← 31]
+			 ]
+		 (second) explicit ->
+			Level 3		[]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+Starting reconstruction
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,33) ← 28]
+			Level 2		[(28,29) ← 28,(31,33) ← 31]
+			 ]
+		 (second) explicit ->
+			Level 3		[]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=9, p=3, and h=1
+	 First:
+		 (first) partially compressed ->
+			 [				
+			 ]
+		 (first) explicit ->
+			Level 1		[(31:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			 ]
+		 (second) explicit ->
+			Level 1		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					31
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=9, p=3, and h=1
+	 First:
+		 (first) partially compressed ->
+			 [				
+			 ]
+		 (first) explicit ->
+			Level 1		[(31:=1),(32:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			 ]
+		 (second) explicit ->
+			Level 1		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					32
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=9, p=3, and h=1
+	 First:
+		 (first) partially compressed ->
+			 [				
+			 ]
+		 (first) explicit ->
+			Level 1		[(31:=1),(32:=1),(33:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			 ]
+		 (second) explicit ->
+			Level 1		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					33
+
+⇒ Final stack
+⇒   Auxiliary stack for reconstruction
+Compressed Stack with n=9, p=3, and h=1
+	 First:
+		 (first) partially compressed ->
+			 [				
+			 ]
+		 (first) explicit ->
+			Level 1		[(31:=1),(32:=1),(33:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			 ]
+		 (second) explicit ->
+			Level 1		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					33
+
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,33) ← 28]
+			Level 2		[(28,29) ← 28,(31,33) ← 31]
+			 ]
+		 (second) explicit ->
+			Level 3		[(31:=1),(32:=1),(33:=1)]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+⟸   Reconstructed stack
+Pop element : 1
+⇒   Pop operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,32) ← 28]
+			Level 2		[(28,29) ← 28,(31,32) ← 31]
+			 ]
+		 (second) explicit ->
+			Level 3		[(31:=1),(32:=1)]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+Pop element : 1
+⇒   Pop operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,31) ← 28]
+			Level 2		[(28,29) ← 28,(31,31) ← 31]
+			 ]
+		 (second) explicit ->
+			Level 3		[(31:=1)]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+Pop element : 1
+⇒   Pop operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,29) ← 28]
+			Level 2		[(28,29) ← 28]
+			 ]
+		 (second) explicit ->
+			Level 3		[]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+Starting reconstruction
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,29) ← 28]
+			Level 2		[(28,29) ← 28]
+			 ]
+		 (second) explicit ->
+			Level 3		[]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=9, p=3, and h=1
+	 First:
+		 (first) partially compressed ->
+			 [				
+			 ]
+		 (first) explicit ->
+			Level 1		[(28:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			 ]
+		 (second) explicit ->
+			Level 1		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					28
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=9, p=3, and h=1
+	 First:
+		 (first) partially compressed ->
+			 [				
+			 ]
+		 (first) explicit ->
+			Level 1		[(28:=1),(29:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			 ]
+		 (second) explicit ->
+			Level 1		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					29
+
+⇒ Final stack
+⇒   Auxiliary stack for reconstruction
+Compressed Stack with n=9, p=3, and h=1
+	 First:
+		 (first) partially compressed ->
+			 [				
+			 ]
+		 (first) explicit ->
+			Level 1		[(28:=1),(29:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			 ]
+		 (second) explicit ->
+			Level 1		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					29
+
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,29) ← 28]
+			Level 2		[(28,29) ← 28]
+			 ]
+		 (second) explicit ->
+			Level 3		[(28:=1),(29:=1)]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+⟸   Reconstructed stack
+Pop element : 1
+⇒   Pop operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(28,28) ← 28]
+			Level 2		[(28,28) ← 28]
+			 ]
+		 (second) explicit ->
+			Level 3		[(28:=1)]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+Pop element : 1
+⇒   Pop operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (second) explicit ->
+			Level 3		[]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+Starting reconstruction
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (second) explicit ->
+			Level 3		[]
+	 Compressed tail:
+					(1,27) ← 1
+
+	 Context:
+					65
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(1,1) ← 1]
+			Level 2		[(1,1) ← 1]
+			 ]
+		 (first) explicit ->
+			Level 3		[(1:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (second) explicit ->
+			Level 3		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					1
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(1,2) ← 1]
+			Level 2		[(1,2) ← 1]
+			 ]
+		 (first) explicit ->
+			Level 3		[(1:=1),(2:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (second) explicit ->
+			Level 3		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					2
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(1,4) ← 1]
+			Level 2		[(1,2) ← 1,(4,4) ← 4]
+			 ]
+		 (first) explicit ->
+			Level 3		[(4:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (second) explicit ->
+			Level 3		[(1:=1),(2:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					4
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(1,5) ← 1]
+			Level 2		[(1,2) ← 1,(4,5) ← 4]
+			 ]
+		 (first) explicit ->
+			Level 3		[(4:=1),(5:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (second) explicit ->
+			Level 3		[(1:=1),(2:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					5
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(1,6) ← 1]
+			Level 2		[(1,2) ← 1,(4,6) ← 4]
+			 ]
+		 (first) explicit ->
+			Level 3		[(4:=1),(5:=1),(6:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (second) explicit ->
+			Level 3		[(1:=1),(2:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					6
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(1,7) ← 1]
+			Level 2		[(1,2) ← 1,(4,6) ← 4,(7,7) ← 7]
+			 ]
+		 (first) explicit ->
+			Level 3		[(7:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (second) explicit ->
+			Level 3		[(4:=1),(5:=1),(6:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					7
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(1,8) ← 1]
+			Level 2		[(1,2) ← 1,(4,6) ← 4,(7,8) ← 7]
+			 ]
+		 (first) explicit ->
+			Level 3		[(7:=1),(8:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (second) explicit ->
+			Level 3		[(4:=1),(5:=1),(6:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					8
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1]
+			Level 2		[(1,2) ← 1,(4,6) ← 4,(7,9) ← 7]
+			 ]
+		 (first) explicit ->
+			Level 3		[(7:=1),(8:=1),(9:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (second) explicit ->
+			Level 3		[(4:=1),(5:=1),(6:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					9
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,10) ← 10]
+			Level 2		[(10,10) ← 10]
+			 ]
+		 (first) explicit ->
+			Level 3		[(10:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[(1,2) ← 1,(4,6) ← 4,(7,9) ← 7]
+			 ]
+		 (second) explicit ->
+			Level 3		[(7:=1),(8:=1),(9:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					10
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,11) ← 10]
+			Level 2		[(10,11) ← 10]
+			 ]
+		 (first) explicit ->
+			Level 3		[(10:=1),(11:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[(1,2) ← 1,(4,6) ← 4,(7,9) ← 7]
+			 ]
+		 (second) explicit ->
+			Level 3		[(7:=1),(8:=1),(9:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					11
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,17) ← 10]
+			Level 2		[(10,11) ← 10,(17,17) ← 17]
+			 ]
+		 (first) explicit ->
+			Level 3		[(17:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[(1,2) ← 1,(4,6) ← 4,(7,9) ← 7]
+			 ]
+		 (second) explicit ->
+			Level 3		[(10:=1),(11:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					17
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,18) ← 10]
+			Level 2		[(10,11) ← 10,(17,18) ← 17]
+			 ]
+		 (first) explicit ->
+			Level 3		[(17:=1),(18:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[(1,2) ← 1,(4,6) ← 4,(7,9) ← 7]
+			 ]
+		 (second) explicit ->
+			Level 3		[(10:=1),(11:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					18
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,18) ← 10,(19,19) ← 19]
+			Level 2		[(19,19) ← 19]
+			 ]
+		 (first) explicit ->
+			Level 3		[(19:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[(10,11) ← 10,(17,18) ← 17]
+			 ]
+		 (second) explicit ->
+			Level 3		[(17:=1),(18:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					19
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,18) ← 10,(19,20) ← 19]
+			Level 2		[(19,20) ← 19]
+			 ]
+		 (first) explicit ->
+			Level 3		[(19:=1),(20:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[(10,11) ← 10,(17,18) ← 17]
+			 ]
+		 (second) explicit ->
+			Level 3		[(17:=1),(18:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					20
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,18) ← 10,(19,21) ← 19]
+			Level 2		[(19,21) ← 19]
+			 ]
+		 (first) explicit ->
+			Level 3		[(19:=1),(20:=1),(21:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[(10,11) ← 10,(17,18) ← 17]
+			 ]
+		 (second) explicit ->
+			Level 3		[(17:=1),(18:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					21
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,18) ← 10,(19,24) ← 19]
+			Level 2		[(19,21) ← 19,(24,24) ← 24]
+			 ]
+		 (first) explicit ->
+			Level 3		[(24:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[(10,11) ← 10,(17,18) ← 17]
+			 ]
+		 (second) explicit ->
+			Level 3		[(19:=1),(20:=1),(21:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					24
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,18) ← 10,(19,27) ← 19]
+			Level 2		[(19,21) ← 19,(24,24) ← 24,(27,27) ← 27]
+			 ]
+		 (first) explicit ->
+			Level 3		[(27:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[(10,11) ← 10,(17,18) ← 17]
+			 ]
+		 (second) explicit ->
+			Level 3		[(24:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					27
+
+⇒ Final stack
+⇒   Auxiliary stack for reconstruction
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,18) ← 10,(19,27) ← 19]
+			Level 2		[(19,21) ← 19,(24,24) ← 24,(27,27) ← 27]
+			 ]
+		 (first) explicit ->
+			Level 3		[(27:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[(10,11) ← 10,(17,18) ← 17]
+			 ]
+		 (second) explicit ->
+			Level 3		[(24:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					27
+
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,18) ← 10,(19,27) ← 19]
+			Level 2		[(19,21) ← 19,(24,24) ← 24,(27,27) ← 27]
+			 ]
+		 (second) explicit ->
+			Level 3		[(27:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					65
+
+⟸   Reconstructed stack
+Pop element : 1
+⇒   Pop operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,18) ← 10,(19,24) ← 19]
+			Level 2		[(19,21) ← 19,(24,24) ← 24]
+			 ]
+		 (second) explicit ->
+			Level 3		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					65
+
+Starting reconstruction
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,18) ← 10,(19,24) ← 19]
+			Level 2		[(19,21) ← 19,(24,24) ← 24]
+			 ]
+		 (second) explicit ->
+			Level 3		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					65
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=9, p=3, and h=1
+	 First:
+		 (first) partially compressed ->
+			 [				
+			 ]
+		 (first) explicit ->
+			Level 1		[(24:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			 ]
+		 (second) explicit ->
+			Level 1		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					24
+
+⇒ Final stack
+⇒   Auxiliary stack for reconstruction
+Compressed Stack with n=9, p=3, and h=1
+	 First:
+		 (first) partially compressed ->
+			 [				
+			 ]
+		 (first) explicit ->
+			Level 1		[(24:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			 ]
+		 (second) explicit ->
+			Level 1		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					24
+
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,18) ← 10,(19,24) ← 19]
+			Level 2		[(19,21) ← 19,(24,24) ← 24]
+			 ]
+		 (second) explicit ->
+			Level 3		[(24:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					65
+
+⟸   Reconstructed stack
+Pop element : 1
+⇒   Pop operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,18) ← 10,(19,21) ← 19]
+			Level 2		[(19,21) ← 19]
+			 ]
+		 (second) explicit ->
+			Level 3		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					65
+
+Starting reconstruction
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,18) ← 10,(19,21) ← 19]
+			Level 2		[(19,21) ← 19]
+			 ]
+		 (second) explicit ->
+			Level 3		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					65
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=9, p=3, and h=1
+	 First:
+		 (first) partially compressed ->
+			 [				
+			 ]
+		 (first) explicit ->
+			Level 1		[(19:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			 ]
+		 (second) explicit ->
+			Level 1		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					19
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=9, p=3, and h=1
+	 First:
+		 (first) partially compressed ->
+			 [				
+			 ]
+		 (first) explicit ->
+			Level 1		[(19:=1),(20:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			 ]
+		 (second) explicit ->
+			Level 1		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					20
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=9, p=3, and h=1
+	 First:
+		 (first) partially compressed ->
+			 [				
+			 ]
+		 (first) explicit ->
+			Level 1		[(19:=1),(20:=1),(21:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			 ]
+		 (second) explicit ->
+			Level 1		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					21
+
+⇒ Final stack
+⇒   Auxiliary stack for reconstruction
+Compressed Stack with n=9, p=3, and h=1
+	 First:
+		 (first) partially compressed ->
+			 [				
+			 ]
+		 (first) explicit ->
+			Level 1		[(19:=1),(20:=1),(21:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			 ]
+		 (second) explicit ->
+			Level 1		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					21
+
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,18) ← 10,(19,21) ← 19]
+			Level 2		[(19,21) ← 19]
+			 ]
+		 (second) explicit ->
+			Level 3		[(19:=1),(20:=1),(21:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					65
+
+⟸   Reconstructed stack
+Pop element : 1
+⇒   Pop operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,18) ← 10,(19,20) ← 19]
+			Level 2		[(19,20) ← 19]
+			 ]
+		 (second) explicit ->
+			Level 3		[(19:=1),(20:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					65
+
+Pop element : 1
+⇒   Pop operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,18) ← 10,(19,19) ← 19]
+			Level 2		[(19,19) ← 19]
+			 ]
+		 (second) explicit ->
+			Level 3		[(19:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					65
+
+Pop element : 1
+⇒   Pop operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,18) ← 10]
+			Level 2		[]
+			 ]
+		 (second) explicit ->
+			Level 3		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					65
+
+Starting reconstruction
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,18) ← 10]
+			Level 2		[]
+			 ]
+		 (second) explicit ->
+			Level 3		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					65
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=27, p=3, and h=2
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(10,10) ← 10]
+			 ]
+		 (first) explicit ->
+			Level 2		[(10:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			 ]
+		 (second) explicit ->
+			Level 2		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					10
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=27, p=3, and h=2
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(10,11) ← 10]
+			 ]
+		 (first) explicit ->
+			Level 2		[(10:=1),(11:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			 ]
+		 (second) explicit ->
+			Level 2		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					11
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=27, p=3, and h=2
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(10,11) ← 10,(17,17) ← 17]
+			 ]
+		 (first) explicit ->
+			Level 2		[(17:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			 ]
+		 (second) explicit ->
+			Level 2		[(10:=1),(11:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					17
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=27, p=3, and h=2
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(10,11) ← 10,(17,18) ← 17]
+			 ]
+		 (first) explicit ->
+			Level 2		[(17:=1),(18:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			 ]
+		 (second) explicit ->
+			Level 2		[(10:=1),(11:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					18
+
+⇒ Final stack
+⇒   Auxiliary stack for reconstruction
+Compressed Stack with n=27, p=3, and h=2
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(10,11) ← 10,(17,18) ← 17]
+			 ]
+		 (first) explicit ->
+			Level 2		[(17:=1),(18:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			 ]
+		 (second) explicit ->
+			Level 2		[(10:=1),(11:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					18
+
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,18) ← 10]
+			Level 2		[(10,11) ← 10,(17,18) ← 17]
+			 ]
+		 (second) explicit ->
+			Level 3		[(17:=1),(18:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					65
+
+⟸   Reconstructed stack
+Pop element : 1
+⇒   Pop operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,17) ← 10]
+			Level 2		[(10,11) ← 10,(17,17) ← 17]
+			 ]
+		 (second) explicit ->
+			Level 3		[(17:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					65
+
+Pop element : 1
+⇒   Pop operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,11) ← 10]
+			Level 2		[(10,11) ← 10]
+			 ]
+		 (second) explicit ->
+			Level 3		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					65
+
+Starting reconstruction
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,11) ← 10]
+			Level 2		[(10,11) ← 10]
+			 ]
+		 (second) explicit ->
+			Level 3		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					65
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=9, p=3, and h=1
+	 First:
+		 (first) partially compressed ->
+			 [				
+			 ]
+		 (first) explicit ->
+			Level 1		[(10:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			 ]
+		 (second) explicit ->
+			Level 1		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					10
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=9, p=3, and h=1
+	 First:
+		 (first) partially compressed ->
+			 [				
+			 ]
+		 (first) explicit ->
+			Level 1		[(10:=1),(11:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			 ]
+		 (second) explicit ->
+			Level 1		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					11
+
+⇒ Final stack
+⇒   Auxiliary stack for reconstruction
+Compressed Stack with n=9, p=3, and h=1
+	 First:
+		 (first) partially compressed ->
+			 [				
+			 ]
+		 (first) explicit ->
+			Level 1		[(10:=1),(11:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			 ]
+		 (second) explicit ->
+			Level 1		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					11
+
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,11) ← 10]
+			Level 2		[(10,11) ← 10]
+			 ]
+		 (second) explicit ->
+			Level 3		[(10:=1),(11:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					65
+
+⟸   Reconstructed stack
+Pop element : 1
+⇒   Pop operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1,(10,10) ← 10]
+			Level 2		[(10,10) ← 10]
+			 ]
+		 (second) explicit ->
+			Level 3		[(10:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					65
+
+Pop element : 1
+⇒   Pop operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1]
+			Level 2		[]
+			 ]
+		 (second) explicit ->
+			Level 3		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					65
+
+Starting reconstruction
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1]
+			Level 2		[]
+			 ]
+		 (second) explicit ->
+			Level 3		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					65
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=27, p=3, and h=2
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(1,1) ← 1]
+			 ]
+		 (first) explicit ->
+			Level 2		[(1:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			 ]
+		 (second) explicit ->
+			Level 2		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					1
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=27, p=3, and h=2
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(1,2) ← 1]
+			 ]
+		 (first) explicit ->
+			Level 2		[(1:=1),(2:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			 ]
+		 (second) explicit ->
+			Level 2		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					2
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=27, p=3, and h=2
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(1,2) ← 1,(4,4) ← 4]
+			 ]
+		 (first) explicit ->
+			Level 2		[(4:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			 ]
+		 (second) explicit ->
+			Level 2		[(1:=1),(2:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					4
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=27, p=3, and h=2
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(1,2) ← 1,(4,5) ← 4]
+			 ]
+		 (first) explicit ->
+			Level 2		[(4:=1),(5:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			 ]
+		 (second) explicit ->
+			Level 2		[(1:=1),(2:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					5
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=27, p=3, and h=2
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(1,2) ← 1,(4,6) ← 4]
+			 ]
+		 (first) explicit ->
+			Level 2		[(4:=1),(5:=1),(6:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			 ]
+		 (second) explicit ->
+			Level 2		[(1:=1),(2:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					6
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=27, p=3, and h=2
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(1,2) ← 1,(4,6) ← 4,(7,7) ← 7]
+			 ]
+		 (first) explicit ->
+			Level 2		[(7:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			 ]
+		 (second) explicit ->
+			Level 2		[(4:=1),(5:=1),(6:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					7
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=27, p=3, and h=2
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(1,2) ← 1,(4,6) ← 4,(7,8) ← 7]
+			 ]
+		 (first) explicit ->
+			Level 2		[(7:=1),(8:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			 ]
+		 (second) explicit ->
+			Level 2		[(4:=1),(5:=1),(6:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					8
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=27, p=3, and h=2
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(1,2) ← 1,(4,6) ← 4,(7,9) ← 7]
+			 ]
+		 (first) explicit ->
+			Level 2		[(7:=1),(8:=1),(9:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			 ]
+		 (second) explicit ->
+			Level 2		[(4:=1),(5:=1),(6:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					9
+
+⇒ Final stack
+⇒   Auxiliary stack for reconstruction
+Compressed Stack with n=27, p=3, and h=2
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[(1,2) ← 1,(4,6) ← 4,(7,9) ← 7]
+			 ]
+		 (first) explicit ->
+			Level 2		[(7:=1),(8:=1),(9:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			 ]
+		 (second) explicit ->
+			Level 2		[(4:=1),(5:=1),(6:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					9
+
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,9) ← 1]
+			Level 2		[(1,2) ← 1,(4,6) ← 4,(7,9) ← 7]
+			 ]
+		 (second) explicit ->
+			Level 3		[(7:=1),(8:=1),(9:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					65
+
+⟸   Reconstructed stack
+Pop element : 1
+⇒   Pop operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,8) ← 1]
+			Level 2		[(1,2) ← 1,(4,6) ← 4,(7,8) ← 7]
+			 ]
+		 (second) explicit ->
+			Level 3		[(7:=1),(8:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					65
+
+Pop element : 1
+⇒   Pop operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,7) ← 1]
+			Level 2		[(1,2) ← 1,(4,6) ← 4,(7,7) ← 7]
+			 ]
+		 (second) explicit ->
+			Level 3		[(7:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					65
+
+Pop element : 1
+⇒   Pop operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,6) ← 1]
+			Level 2		[(1,2) ← 1,(4,6) ← 4]
+			 ]
+		 (second) explicit ->
+			Level 3		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					65
+
+Starting reconstruction
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,6) ← 1]
+			Level 2		[(1,2) ← 1,(4,6) ← 4]
+			 ]
+		 (second) explicit ->
+			Level 3		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					65
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=9, p=3, and h=1
+	 First:
+		 (first) partially compressed ->
+			 [				
+			 ]
+		 (first) explicit ->
+			Level 1		[(4:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			 ]
+		 (second) explicit ->
+			Level 1		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					4
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=9, p=3, and h=1
+	 First:
+		 (first) partially compressed ->
+			 [				
+			 ]
+		 (first) explicit ->
+			Level 1		[(4:=1),(5:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			 ]
+		 (second) explicit ->
+			Level 1		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					5
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=9, p=3, and h=1
+	 First:
+		 (first) partially compressed ->
+			 [				
+			 ]
+		 (first) explicit ->
+			Level 1		[(4:=1),(5:=1),(6:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			 ]
+		 (second) explicit ->
+			Level 1		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					6
+
+⇒ Final stack
+⇒   Auxiliary stack for reconstruction
+Compressed Stack with n=9, p=3, and h=1
+	 First:
+		 (first) partially compressed ->
+			 [				
+			 ]
+		 (first) explicit ->
+			Level 1		[(4:=1),(5:=1),(6:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			 ]
+		 (second) explicit ->
+			Level 1		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					6
+
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,6) ← 1]
+			Level 2		[(1,2) ← 1,(4,6) ← 4]
+			 ]
+		 (second) explicit ->
+			Level 3		[(4:=1),(5:=1),(6:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					65
+
+⟸   Reconstructed stack
+Pop element : 1
+⇒   Pop operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,5) ← 1]
+			Level 2		[(1,2) ← 1,(4,5) ← 4]
+			 ]
+		 (second) explicit ->
+			Level 3		[(4:=1),(5:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					65
+
+Pop element : 1
+⇒   Pop operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,4) ← 1]
+			Level 2		[(1,2) ← 1,(4,4) ← 4]
+			 ]
+		 (second) explicit ->
+			Level 3		[(4:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					65
+
+Pop element : 1
+⇒   Pop operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,2) ← 1]
+			Level 2		[(1,2) ← 1]
+			 ]
+		 (second) explicit ->
+			Level 3		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					65
+
+Starting reconstruction
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,2) ← 1]
+			Level 2		[(1,2) ← 1]
+			 ]
+		 (second) explicit ->
+			Level 3		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					65
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=9, p=3, and h=1
+	 First:
+		 (first) partially compressed ->
+			 [				
+			 ]
+		 (first) explicit ->
+			Level 1		[(1:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			 ]
+		 (second) explicit ->
+			Level 1		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					1
+
+⇒ Push operation (during reconstruction)
+Compressed Stack with n=9, p=3, and h=1
+	 First:
+		 (first) partially compressed ->
+			 [				
+			 ]
+		 (first) explicit ->
+			Level 1		[(1:=1),(2:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			 ]
+		 (second) explicit ->
+			Level 1		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					2
+
+⇒ Final stack
+⇒   Auxiliary stack for reconstruction
+Compressed Stack with n=9, p=3, and h=1
+	 First:
+		 (first) partially compressed ->
+			 [				
+			 ]
+		 (first) explicit ->
+			Level 1		[(1:=1),(2:=1)]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			 ]
+		 (second) explicit ->
+			Level 1		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					2
+
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,2) ← 1]
+			Level 2		[(1,2) ← 1]
+			 ]
+		 (second) explicit ->
+			Level 3		[(1:=1),(2:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					65
+
+⟸   Reconstructed stack
+Pop element : 1
+⇒   Pop operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[(1,1) ← 1]
+			Level 2		[(1,1) ← 1]
+			 ]
+		 (second) explicit ->
+			Level 3		[(1:=1)]
+	 Compressed tail:
+					∅
+
+	 Context:
+					65
+
+Pop element : 1
+⇒   Pop operation
+Compressed Stack with n=81, p=3, and h=3
+	 First:
+		 (first) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (first) explicit ->
+			Level 3		[]
+	 Second:
+		 (second) partially compressed ->
+			 [				
+			Level 1		[]
+			Level 2		[]
+			 ]
+		 (second) explicit ->
+			Level 3		[]
+	 Compressed tail:
+					∅
+
+	 Context:
+					65
+
