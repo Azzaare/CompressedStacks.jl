@@ -19,20 +19,20 @@ include("intern.jl")
 
 ## Function to run a CompressedStack similarly than for a classic stack
 function run!(stack::CompressedStack)
-  println("⇒   Initial empty stack")
-  print(stack)
+  #println("⇒   Initial empty stack")
+  #print(stack)
 
   while !eof(stack.input)
     while !isempty(stack) && stack.pop_condition(stack)
       pop!(stack)
-      println("⇒   Pop operation")
-      print(stack)
+  #    println("⇒   Pop operation")
+  #    print(stack)
     end
     elt = readinput(stack)
     if stack.push_condition(stack, elt)
       push!(stack, elt)
-      println("⇒   Push operation")
-      print(stack)
+  #    println("⇒   Push operation")
+  #    print(stack)
     end
   end
 end
@@ -41,17 +41,17 @@ function run!(stack::CompressedStack, limit::Int)
     limit -= 1
     while !isempty(stack) && stack.pop_condition(stack)
       pop!(stack)
-      println("⇒   Pop operation (during reconstruction)")
-      print(stack)
+  #    println("⇒   Pop operation (during reconstruction)")
+  #    print(stack)
     end
     elt = readinput(stack)
     if stack.push_condition(stack, elt)
       push!(stack, elt)
-      println("⇒ Push operation (during reconstruction)")
-      print(stack)
+  #    println("⇒ Push operation (during reconstruction)")
+  #    print(stack)
     end
   end
-  println("⇒ Final stack")
+#  println("⇒ Final stack")
 end
 
 ## Testing part

@@ -171,8 +171,8 @@ function reconstruct!(stack::CompressedStack, sign::Signature, lvl::Int)
   run!(aux, sign.last - sign.first)
   δ = stack.depth - aux.depth
 
-  println("⇒   Auxiliary stack for reconstruction")
-  print(aux)
+#  println("⇒   Auxiliary stack for reconstruction")
+#  print(aux)
 
   for i in 1:(aux.depth-1)
     stack.second_partial[δ + i] = aux.first_partial[i]
@@ -266,11 +266,11 @@ function pop!(stack::CompressedStack)
     pop_first!(stack)
   else
     if isempty(stack.second_explicit)
-      println("Starting reconstruction")
-      print(stack)
+    #  println("Starting reconstruction")
+    #  print(stack)
       reconstruct!(stack)
-      print(stack)
-      println("⟸   Reconstructed stack")
+    #  print(stack)
+    #  println("⟸   Reconstructed stack")
     end
     pop_second!(stack)
   end

@@ -133,3 +133,17 @@ function CompressedStack(name::AbstractString, pop_action::Function,
   push_action, push_condition, pop_action, pop_condition;
   output= Nullable{IOStream}(output))
 end
+
+function CompressedStack(name::AbstractString, pop_action::Function,
+  push_action::Function, pop_condition::Function, push_condition::Function,
+  context_type::DataType, data_type::DataType, size::Int, space::Int)
+
+  input = open(name, "r")
+  output_name = name * "_out"
+  output = open(output_name, "w")
+  settings = get_settings(input)
+
+  CompressedStack(size, space, input, context_type, data_type,
+  push_action, push_condition, pop_action, pop_condition;
+  output= Nullable{IOStream}(output))
+end
