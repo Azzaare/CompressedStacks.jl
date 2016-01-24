@@ -54,6 +54,10 @@ function run!(stack::CompressedStack, limit::Int)
 #  println("⇒ Final stack")
 end
 
+## NormalStack
+include("normal.jl")
+include("compare.jl")
+
 ## Testing part
 include("temp.jl")
 

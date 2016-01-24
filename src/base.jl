@@ -45,8 +45,7 @@ type CompressedStack{T,D}
   input::IOStream # Pointer on a file to avoid memory consumption
   copy_input::IOStream # Pointer to copy the input before the reading
   output::Nullable{IOStream} # Pointer to an optional (Nullable) output file
-  # Functions defining the behavior of the stack
-  # Those function should only take a CompressedStack as input
+  # Functions defining the behavior of the stack in case of push/pop
   push_condition::Function
   push_action::Function
   pop_condition::Function
