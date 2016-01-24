@@ -5,7 +5,7 @@ using Base.Test
 @test 1 == 1
 
 # IO test
-import CompressedStacks.io_test
+include("temp.jl")
 
 println("Test IO")
 io_test()

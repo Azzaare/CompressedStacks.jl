@@ -1,10 +1,7 @@
 ### I/O functions for the CompressedStack structure
-
-## Import in CompressedStacks.jl
-# import Base.print, Base.string
+import Base.print, Base.string 
 
 ## Convert functions : string ##
-
 # Access and convert to Sting the content of a Nullable object
 function string{T}(elt::Nullable{T})
   if !isnull(elt)
@@ -14,12 +11,10 @@ function string{T}(elt::Nullable{T})
   end
   return str
 end
-
 # Convert a Signature into a string
 function string{T}(sign::Signature{T})
   return "($(sign.first),$(sign.last)) ← $(sign.context)"
 end
-
 function string{T}(block::Block{T})
   str = "["
   for (id,sign) in enumerate(block)
@@ -32,13 +27,10 @@ function string{T}(block::Block{T})
   str *= "]"
   return str
 end
-
 # Convert a Data{T} into a string
-
 function string{D}(elt::Data{D})
   return "($(elt.index):=$(elt.data))"
 end
-
 # Convert a vector of partially compressed blocks into a string
 function string{T}(lvl::Levels{T})
   str = "[\t\t\t\t"
@@ -48,7 +40,6 @@ function string{T}(lvl::Levels{T})
   str *= "\n\t\t\t ]"
   return str
 end
-
 # Convert a vector of explicit integral values into a string
 function string{D}(explicit::Vector{Data{D}})
   str = "["
@@ -64,7 +55,6 @@ function string{D}(explicit::Vector{Data{D}})
 end
 
 ## Print functions ##
-
 # Print a CompressedStack in the console
 function print(stack::CompressedStack)
   println("Compressed Stack with n=$(stack.size), p=$(stack.space),",
@@ -86,7 +76,6 @@ function print(stack::CompressedStack)
 end
 
 ## Read from input file
-
 # Get the settings (size, space, ...) of the CompressedStack
 function get_settings(f::IOStream)
   i = 0
@@ -107,7 +96,8 @@ function get_settings(f::IOStream)
   return size,space
 end
 
-# Get next element (before a push)
+## Read the input: Get next element (before a push)
+# For Compressed Stack
 function readinput{T,D}(stack::CompressedStack{T,D})
   stack.copy_input = deepcopy(stack.input)
   stack.index += 1
@@ -115,35 +105,9 @@ function readinput{T,D}(stack::CompressedStack{T,D})
   aux = split(line)
   return parse(Int,aux[1])
 end
-
-
-## Constructor for CompressedStack from a file input ##
-
-# No given output file, $(name)_out is generated
-function CompressedStack(name::AbstractString, pop_action::Function,
-  push_action::Function, pop_condition::Function, push_condition::Function,
-  context_type::DataType, data_type::DataType)
-
-  input = open(name, "r")
-  output_name = name * "_out"
-  output = open(output_name, "w")
-  settings = get_settings(input)
-
-  CompressedStack(settings[1], settings[2], input, context_type, data_type,
-  push_action, push_condition, pop_action, pop_condition;
-  output= Nullable{IOStream}(output))
-end
-
-function CompressedStack(name::AbstractString, pop_action::Function,
-  push_action::Function, pop_condition::Function, push_condition::Function,
-  context_type::DataType, data_type::DataType, size::Int, space::Int)
-
-  input = open(name, "r")
-  output_name = name * "_out"
-  output = open(output_name, "w")
-  settings = get_settings(input)
-
-  CompressedStack(size, space, input, context_type, data_type,
-  push_action, push_condition, pop_action, pop_condition;
-  output= Nullable{IOStream}(output))
+function readinput(stack::NormalStack)
+  stack.index += 1
+  line = readline(stack.input)
+  aux = split(line)
+  return parse(Int,aux[1])
 end

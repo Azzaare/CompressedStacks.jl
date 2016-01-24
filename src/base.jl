@@ -8,14 +8,21 @@ type Signature{T}
   input::IOStream
 end
 
+## A Partially Compressed Block is composed of the signatures of its SubBlocks
+typealias Block{T} Vector{Signature{T}}
+## Each level of compressed Blocks (first and second) are stored in Levels
+typealias Levels{T} Vector{Block{T}}
+## Type Data to store the data and their index
+type Data{D}
+  data::D
+  index::Int
+end
+
+## Constructor for Signature
 # Constructor for singleton signature
 function Signature{T}(index::Int, context::T, input::IOStream)
   Signature(index, index, context, input)
 end
-
-## A Partially Compressed Block is composed of the signatures of its SubBlocks
-typealias Block{T} Vector{Signature{T}}
-
 # Constructor for a Signature (from a Block)
 function Signature{T}(block::Block{T})
   context = block[1].context
@@ -23,15 +30,6 @@ function Signature{T}(block::Block{T})
   input = block[1].input
   last = block[end].last
   Signature(first, last, context, input)
-end
-
-## Each level of compressed Blocks (first and second) are stored in Levels
-typealias Levels{T} Vector{Block{T}}
-
-## Type Data to store the data and their index
-type Data{D}
-  data::D
-  index::Int
 end
 
 ## General CompressedStack (i.e. with parametric context T and data type D)
@@ -100,4 +98,36 @@ function CompressedStack(stack::CompressedStack, size::Int,
   CompressedStack(size * stack.space, stack.space, input, stack.context_type, stack.data_type,
   stack.push_action, stack.push_condition, stack.pop_action, stack.pop_condition;
   index = index, context = Nullable(context), output = Nullable{IOStream}())
+end
+
+### Constructor for CompressedStack from a file input ##
+## No given output file, $(name)_out is generated
+# Size and space given in the input file
+function CompressedStack(name::AbstractString, pop_action::Function,
+  push_action::Function, pop_condition::Function, push_condition::Function,
+  context_type::DataType, data_type::DataType)
+
+  input = open(name, "r")
+  output_name = name * "_out"
+  output = open(output_name, "w")
+  settings = get_settings(input)
+
+  CompressedStack(settings[1], settings[2], input, context_type, data_type,
+  push_action, push_condition, pop_action, pop_condition;
+  output= Nullable{IOStream}(output))
+end
+
+# Size and space given by the user
+function CompressedStack(name::AbstractString, pop_action::Function,
+  push_action::Function, pop_condition::Function, push_condition::Function,
+  context_type::DataType, data_type::DataType, size::Int, space::Int)
+
+  input = open(name, "r")
+  output_name = name * "_out"
+  output = open(output_name, "w")
+  settings = get_settings(input)
+
+  CompressedStack(size, space, input, context_type, data_type,
+  push_action, push_condition, pop_action, pop_condition;
+  output= Nullable{IOStream}(output))
 end

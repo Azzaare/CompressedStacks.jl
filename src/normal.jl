@@ -25,6 +25,7 @@ function NormalStack(input::IOStream, context_type::DataType,
   pop_action, data, context, index)
 end
 
+## Normal Stack from input file
 function NormalStack(name::AbstractString, pop_action::Function,
   push_action::Function, pop_condition::Function, push_condition::Function,
   context_type::DataType, data_type::DataType)
@@ -36,41 +37,4 @@ function NormalStack(name::AbstractString, pop_action::Function,
 
   NormalStack(input, context_type, data_type, push_action, push_condition, pop_action,
   pop_condition; output= Nullable{IOStream}(output))
-end
-
-function top(stack::NormalStack)
-  return stack.data[end]
-end
-
-function isempty(stack::NormalStack)
-  isempty(stack.data)
-end
-
-function push!{D}(stack::NormalStack, elt::D)
-  push!(stack.data, elt)
-  stack.push_action(stack, elt)
-end
-
-function pop!(stack::NormalStack)
-  elt = pop!(stack.data)
-  stack.pop_action(stack, elt)
-end
-
-function run!(stack::NormalStack)
-  while !eof(stack.input)
-    while !isempty(stack) && stack.pop_condition(stack)
-      pop!(stack)
-    end
-    elt = readinput(stack)
-    if stack.push_condition(stack, elt)
-      push!(stack, elt)
-    end
-  end
-end
-
-function readinput(stack::NormalStack)
-  stack.index += 1
-  line = readline(stack.input)
-  aux = split(line)
-  return parse(Int,aux[1])
 end
