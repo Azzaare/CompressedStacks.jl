@@ -10,7 +10,7 @@ type NormalStack{T,D}
   pop_condition::Function
   pop_action::Function
   # (Explicit) data and context
-  data::Vector{D}
+  data::Vector{Data{D}} # Data type is in base.jl
   context::Nullable{T}
   index::Int
 end
@@ -20,7 +20,7 @@ function NormalStack(input::IOStream, context_type::DataType,
   pop_action::Function, pop_condition::Function;
   index = 0, context = Nullable{context_type}(), output = Nullable{IOStream}())
 
-  data = Vector{data_type}()
+  data = Vector{Data{data_type}}()
   NormalStack(input, output, push_condition, push_action, pop_condition,
   pop_action, data, context, index)
 end

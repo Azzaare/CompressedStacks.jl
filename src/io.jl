@@ -1,5 +1,5 @@
 ### I/O functions for the CompressedStack structure
-import Base.print, Base.string 
+import Base.print, Base.string
 
 ## Convert functions : string ##
 # Access and convert to Sting the content of a Nullable object
@@ -53,6 +53,19 @@ function string{D}(explicit::Vector{Data{D}})
   str *= "]"
   return str
 end
+# Convert a vector of D into a string (used for NormalStack)
+function string{D}(values::Vector{D})
+  str = "["
+  for (id,p) in enumerate(values)
+    if id == 1
+      str *= string(p)
+    else
+      str *= ",$(string(p))"
+    end
+  end
+  str *= "]"
+  return str
+end
 
 ## Print functions ##
 # Print a CompressedStack in the console
@@ -73,6 +86,13 @@ function print(stack::CompressedStack)
   println("\t\t\t\t\t$(string(stack.compressed))\n")
   println("\t Context:")
   println("\t\t\t\t\t$(string(stack.context))\n")
+end
+
+# Print NormalStack in the console
+function print(stack::NormalStack)
+  println("Normal Stack (used for comparison with a CompressedStack above)")
+  println("\t values : $(string(stack.data))")
+  println("\t context: $(string(stack.context))")
 end
 
 ## Read from input file

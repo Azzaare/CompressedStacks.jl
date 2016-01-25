@@ -56,11 +56,13 @@ function pop_first!(stack::CompressedStack)
   index = top(stack)
   elt = pop!(stack.first_explicit)
   stack.pop_action(stack, elt.data)
-  if isempty(stack.first_explicit)
-    empty_first!(stack, index, stack.depth - 1)
-  else
-    new_index = stack.first_explicit[end].index
-    propagate_first!(stack, new_index, stack.depth - 1)
+  if stack.depth > 1
+    if isempty(stack.first_explicit)
+      empty_first!(stack, index, stack.depth - 1)
+    else
+      new_index = stack.first_explicit[end].index
+      propagate_first!(stack, new_index, stack.depth - 1)
+    end
   end
 end
 
@@ -68,11 +70,13 @@ function pop_second!(stack::CompressedStack)
   index = top(stack)
   elt = pop!(stack.second_explicit)
   stack.pop_action(stack, elt.data)
-  if isempty(stack.second_explicit)
-    empty_second!(stack, index, stack.depth - 1)
-  else
-    new_index = stack.second_explicit[end].index
-    propagate_second!(stack, new_index, stack.depth - 1)
+  if stack.depth > 1
+    if isempty(stack.second_explicit)
+      empty_second!(stack, index, stack.depth - 1)
+    else
+      new_index = stack.second_explicit[end].index
+      propagate_second!(stack, new_index, stack.depth - 1)
+    end
   end
 end
 
@@ -94,5 +98,5 @@ end
 ## redefinition of pop! for Normal Stacks
 function pop!(stack::NormalStack)
   elt = pop!(stack.data)
-  stack.pop_action(stack, elt)
+  stack.pop_action(stack, elt.data)
 end

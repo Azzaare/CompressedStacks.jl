@@ -38,9 +38,8 @@ end
 
 # Function to push (possibly fully) compressed index of new data from input
 function push_compressed!{T,D}(stack::CompressedStack{T,D}, lvl::Int)
-  p = stack.space^(lvl)
-  dist_block = stack.size / p
-  dist_subblock = dist_block / stack.space
+  dist_subblock = stack.space^(stack.depth - lvl)
+  dist_block = dist_subblock * stack.space
 
   if isempty(stack, lvl)
     input_copy = deepcopy(stack.copy_input)
@@ -91,6 +90,7 @@ end
 #####################
 ## push! for NormalStack
 function push!{D}(stack::NormalStack, elt::D)
-  push!(stack.data, elt)
   stack.push_action(stack, elt)
+  data = Data(elt, stack.index)
+  push!(stack.data, data)
 end

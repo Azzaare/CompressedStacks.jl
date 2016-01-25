@@ -7,7 +7,8 @@ function isempty(stack::CompressedStack)
   bfirst = isempty(stack.first_partial) || isempty(stack.first_partial[1])
   bsecond = isempty(stack.second_partial) || isempty(stack.second_partial[1])
   bcompressed = isnull(stack.compressed)
-  return bfirst && bsecond && bcompressed
+  bexplicit = isempty(stack.first_explicit) && isempty(stack.second_explicit)
+  return bfirst && bsecond && bcompressed && bexplicit
 end
 function isempty(stack::CompressedStack, lvl::Int)
   if lvl < stack.depth
@@ -34,7 +35,8 @@ end
 ## Reading the top element
 # Normal Stacks
 function top(stack::NormalStack)
-  return stack.data[end]
+  d = stack.data[end]
+  return d.index
 end
 
 # Compressed Stacks

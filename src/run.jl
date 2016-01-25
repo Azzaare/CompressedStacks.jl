@@ -43,7 +43,7 @@ end
 ### Comparison between both Stacks
 function run!(cs::CompressedStack, ns::NormalStack)
   while !eof(cs.input)
-    if eof(ns) != eof(cs.input)
+    if eof(ns.input) != eof(cs.input)
       error("The two stacks have different input reading")
     elseif isempty(cs) != isempty(ns)
       error("Only one of the two stacks is empty")
@@ -51,11 +51,14 @@ function run!(cs::CompressedStack, ns::NormalStack)
       error("The pop conditions of the stacks give different boolean values")
     end
     while !isempty(cs) && cs.pop_condition(cs)
-      pop!(cs)
-      pop!(ns)
-      if top(ns) != read_top(cs)
+      if top(ns) != top(cs)
+              print(cs)
+              print(ns)
+        println("top: cs=$(top(cs)), ns=$(top(ns))")
         error("The top element of the stacks are different after a pop!")
       end
+      pop!(cs)
+      pop!(ns)
     end
     elt = readinput(cs)
     if elt != readinput(ns)
@@ -65,6 +68,7 @@ function run!(cs::CompressedStack, ns::NormalStack)
     end
     if cs.push_condition(cs, elt)
       push!(cs, elt)
+      push!(ns, elt)
     end
   end
 end
