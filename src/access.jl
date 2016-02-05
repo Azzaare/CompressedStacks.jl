@@ -44,13 +44,16 @@ function top{T}(block::Block{T})
   return block[end].last
 end
 
+
 function top{T}(stack::CompressedStack{T})
-  if isempty(stack.first_partial)
+  if !isempty(stack.first_partial) && !isempty(stack.first_partial[1])
+    top(stack.first_partial[1])
+  elseif !isempty(stack.second_partial) && !isempty(stack.second_partial[1])
+    top(stack.second_partial[1])
+  elseif !isempty(stack.first_explicit) || !isempty(stack.second_explicit)
     top_explicit(stack)
-  elseif isempty(stack.first_partial[1])
-    return top(stack.second_partial[1])
   else
-    return top(stack.first_partial[1])
+    return get(stack.compressed).last
   end
 end
 

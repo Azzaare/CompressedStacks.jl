@@ -3,7 +3,7 @@ __precompile__() # Precompile option for the module. Is recompiled after changes
 module CompressedStacks
 
 ## Import/Export
-export CompressedStack, NormalStack, run!
+export CompressedStack, NormalStack, run!, top, top_explicit
 
 ## Basic types and constructors for CompressedStack
 include("base.jl")

@@ -1,5 +1,10 @@
 using CompressedStacks
 
+#import CompressedStacks.stack_test
+import CompressedStacks.CompressedStack
+#import CompressedStacks.access
+#import CompressedStacks.run!
+
 #stack_test(70,3)
 
 #original benchmark function
@@ -30,37 +35,36 @@ function printsum(a)
 end
 
 function condition_push(stack::CompressedStack, elt::Int)
-  aux = elt
 
-  popRatio= parse(ARGS[3])
-  min=parse(ARGS[4])
-  max=parse(ARGS[5])
-  range=max-min
+return true
 
-#flush(STDOUT)
-#print(" min ",min,"max :",max," popratio: ",popRatio)
- #println("should I push ",aux," ? : ",(aux) > (min+popRatio*range))
-#flush(STDOUT)
-
-  return (aux > (min+popRatio*range))
 end
 
-function condition_pop(stack::CompressedStack)
-#println("La lio? ",isempty(stack))
-# This sort of reads the next one?
-  f = deepcopy(stack.input)
-  line = readline(f)
-  aux = split(line)
+function condition_pop(stack::CompressedStack, elt::Int)
 
-  popRatio= parse(ARGS[3])
-  min=parse(ARGS[4])
-  max=parse(ARGS[5])
-  range=max-min
-#flush(STDOUT)
-#  println("should I POP ",aux[1]," ? : ",(parse(aux[1]) < (min+popRatio*range)))
-#flush(STDOUT)
+  #println("La lio? ",isempty(stack))
+  # This sort of reads the next one?
+    if !isempty(stack)
+      popRatio= parse(ARGS[3])
+      min=parse(ARGS[4])
+      max=parse(ARGS[5])
+      range=max-min
+      topElement=top(stack)
 
-  return (parse(aux[1]) < (min+popRatio*range))
+    #flush(STDOUT)
+    #  println("should I POP ",aux[1]," ? : ",(parse(aux[1]) < (min+popRatio*range)))
+    #flush(STDOUT)
+        if (elt==(max+1))
+          #println("POPPOP")
+          return true
+        else
+          return ( (elt+topElement) < (min+2*popRatio*range))
+        end
+    else
+        print(stack)
+        println("IN this case the compressed stack was empty so I should NOT pop, unless I am comparing the run! of two stacks")
+        return false
+    end
 
 end
 
@@ -77,37 +81,41 @@ end
 #now do the same thing again for the normal stack
 
 function condition_push2(stack::NormalStack, elt::Int)
-  aux = elt
+#  aux = elt
 
-  popRatio= parse(ARGS[3])
-  min=parse(ARGS[4])
-  max=parse(ARGS[5])
-  range=max-min
-
-#flush(STDOUT)
-#print(" min ",min,"max :",max," popratio: ",popRatio)
- #println("should I push ",aux," ? : ",(aux) > (min+popRatio*range))
-#flush(STDOUT)
-
-  return (aux > (min+popRatio*range))
+#  popRatio= parse(ARGS[3])
+#  min=parse(ARGS[4])
+#  max=parse(ARGS[5])
+#  range=max-min
+#  return (aux > (min+popRatio*range))
+  return true
 end
 
-function condition_pop2(stack::NormalStack)
+function condition_pop2(stack::NormalStack, elt::Int)
 #println("La lio? ",isempty(stack))
 # This sort of reads the next one?
-  f = deepcopy(stack.input)
-  line = readline(f)
-  aux = split(line)
+  if !isempty(stack)
+    popRatio= parse(ARGS[3])
+    min=parse(ARGS[4])
+    max=parse(ARGS[5])
+    range=max-min
+    topElement=top(stack)
 
-  popRatio= parse(ARGS[3])
-  min=parse(ARGS[4])
-  max=parse(ARGS[5])
-  range=max-min
-#flush(STDOUT)
-#  println("should I POP ",aux[1]," ? : ",(parse(aux[1]) < (min+popRatio*range)))
-#flush(STDOUT)
+  #flush(STDOUT)
+  #  println("should I POP ",aux[1]," ? : ",(parse(aux[1]) < (min+popRatio*range)))
+  #flush(STDOUT)
+      if (elt==(max+1))
+          #println("POPPOP")
+          return true
+      else
+        return ( (elt+topElement) < (min+2*popRatio*range))
+      end
 
-  return (parse(aux[1]) < (min+popRatio*range))
+  else
+      print(stack)
+      println("IN this case the noraml stack was empty so I should NOT pop, unless I am comparing the run! of two stacks")
+      return false
+  end
 
 end
 
@@ -119,12 +127,6 @@ end
 function action_pop2(stack::NormalStack, elt::Int)
 #  println("Pop element : $elt")
 end
-
-
-
-
-
-
 
 
 
@@ -157,25 +159,54 @@ function randomPushPopTestCompressed(name,size,space)
 #end
 
 run!(stack,normalstack)
+#run!(stack)
 
   stack = 0
 
 end
 
-function randomPushPopTest(repetitions,popRatio,min,max)
+#function randomPushPopTest(repetitions,popRatio,min,max)
+function randomPushPopTest(name)
 
 # First let us make a normal stack
-q=Int[]
-
-println("randomPushPopTest, Parameters ",repetitions," ",popRatio," ",min," ",max," ")
-
-range=max-min
-
+#q=Int[]
+#println("randomPushPopTest, Parameters ",repetitions," ",popRatio," ",min," ",max," ")
+#range=max-min
 # Careful, as the rand is of integers this is not really working as a random choice with popRatio parameter
-for i = 1:repetitions
-  (x=rand(min:max)) > (min+popRatio*range) ? push!(q,x) : isempty(q) ? true : pop!(q)
+#for i = 1:repetitions
+#  (x=rand(min:max)) > (min+popRatio*range) ? push!(q,x) : isempty(q) ? true : pop!(q)
   #println(i)
-end
+#end
+
+println("randomPushPopTest with normal stack, with Parameters name:",name)
+
+context_type = Int
+data_type = Int
+
+#ns = NormalStack(name, action_pop2, action_push2, condition_pop2,
+#condition_push2, context_type, data_type)
+
+#cs = CompressedStack(name, action_pop, action_push, condition_pop,
+#condition_push, context_type, data_type)
+
+#stack = CompressedStack(name, action_pop, action_push, condition_pop, condition_push, context_type, data_type,size,space)
+normalstack = NormalStack(name, action_pop2, action_push2, condition_pop2, condition_push2, context_type, data_type)
+
+run!(normalstack)
+#try run!(normalstack)
+#catch Exception e
+#  println("normal stack caught this exception ",e)
+#  println("The stack was ")
+#  print(normalstack)
+#end
+
+normalstack = 0
+
+
+
+
+
+
 
 end
 
@@ -210,8 +241,8 @@ else
   Profile.clear_malloc_data()
   gc()
   #@profile @time parse(ARGS[8])==0 ? randomPushPopTest(parse(ARGS[2]),parse(ARGS[3]),parse(ARGS[4]),parse(ARGS[5])) : randomPushPopTestCompressed(IOFileName)
-parse(ARGS[8])==0 ? randomPushPopTest(parse(ARGS[2]),parse(ARGS[3]),parse(ARGS[4]),parse(ARGS[5])) : randomPushPopTestCompressed(IOFileName,n,p)
-
+#parse(ARGS[8])==0 ? randomPushPopTest(parse(ARGS[2]),parse(ARGS[3]),parse(ARGS[4]),parse(ARGS[5])) : randomPushPopTestCompressed(IOFileName,n,p)
+parse(ARGS[8])==0 ? randomPushPopTest( IOFileName ) : randomPushPopTestCompressed(IOFileName,n,p)
 
 
   # Write profile results to profile.bin.
