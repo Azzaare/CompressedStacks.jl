@@ -119,11 +119,17 @@ end
 ## Read the input: Get next element (before a push)
 # For Compressed Stack
 function readinput{T,D}(stack::CompressedStack{T,D})
-  stack.copy_input = deepcopy(stack.input)
-  stack.index += 1
-  line = readline(stack.input)
-  aux = split(line)
-  return parse(Int,aux[1])
+  try
+    stack.pos = position(stack.input)
+    stack.index += 1
+    line = readline(stack.input)
+    aux = split(line)
+    # println("Input: line=$line → aux=$aux")
+    return parse(Int,aux[1])
+  catch
+    #println("Input: line=$line → aux=$aux")
+    return 101
+  end
 end
 function readinput(stack::NormalStack)
   stack.index += 1

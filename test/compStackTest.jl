@@ -113,7 +113,7 @@ function condition_pop2(stack::NormalStack, elt::Int)
 
   else
       print(stack)
-      println("IN this case the noraml stack was empty so I should NOT pop, unless I am comparing the run! of two stacks")
+      println("IN this case the normal stack was empty so I should NOT pop, unless I am comparing the run! of two stacks")
       return false
   end
 
@@ -157,6 +157,10 @@ function randomPushPopTestCompressed(name,size,space)
 #  println("The stack was ")
 #  print(stack)
 #end
+
+# seekend(stack.input)
+# seekend(normalstack.input)
+# println(position(stack.input)==position(normalstack.input))
 
 run!(stack,normalstack)
 #run!(stack)

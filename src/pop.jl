@@ -97,6 +97,11 @@ end
 ####################
 ## redefinition of pop! for Normal Stacks
 function pop!(stack::NormalStack)
+  before = position(stack.input)
   elt = pop!(stack.data)
   stack.pop_action(stack, elt.data)
+  after = position(stack.input)
+  if before != after
+    println("Before and after are different!")
+  end
 end

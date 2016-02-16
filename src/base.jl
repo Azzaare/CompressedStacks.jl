@@ -5,7 +5,7 @@ type Signature{T}
   first::Int
   last::Int
   context::T
-  input::IOStream
+  position::Int # position of the input
 end
 
 ## A Partially Compressed Block is composed of the signatures of its SubBlocks
@@ -20,14 +20,14 @@ end
 
 ## Constructor for Signature
 # Constructor for singleton signature
-function Signature{T}(index::Int, context::T, input::IOStream)
-  Signature(index, index, context, input)
+function Signature{T}(index::Int, context::T, position::Int)
+  Signature(index, index, context, position)
 end
 # Constructor for a Signature (from a Block)
 function Signature{T}(block::Block{T})
   context = block[1].context
   first = block[1].first
-  input = block[1].input
+  pos = block[1].input
   last = block[end].last
   Signature(first, last, context, input)
 end
@@ -41,7 +41,7 @@ type CompressedStack{T,D}
   depth::Int # Depth (#levels of compression) based on size and space
   # IO
   input::IOStream # Pointer on a file to avoid memory consumption
-  copy_input::IOStream # Pointer to copy the input before the reading
+  pos::Int # Position of the input before the reading
   output::Nullable{IOStream} # Pointer to an optional (Nullable) output file
   # Functions defining the behavior of the stack in case of push/pop
   push_condition::Function
@@ -71,6 +71,7 @@ function CompressedStack(size::Int, space::Int, input::IOStream,
   context_type::DataType, data_type::DataType,
   push_action::Function, push_condition::Function,
   pop_action::Function, pop_condition::Function;
+  pos = position(input),
   index = 0, context = Nullable{context_type}(), output = Nullable{IOStream}())
 
   depth = convert(Int,ceil(log(space, size - 0.1))) - 1
@@ -88,18 +89,22 @@ function CompressedStack(size::Int, space::Int, input::IOStream,
   end
 
   # Call to the basic constructor
-  CompressedStack(size, space, depth, input, input, output, push_condition,
+  CompressedStack(size, space, depth, input, pos, output, push_condition,
   push_action, pop_condition, pop_action, first_partial, first_explicit,
   sign_explicit, second_partial, second_explicit, sign_explicit,
   compressed, index, context, context_type, data_type)
 end
 
 # Constructor for the reconstruction procedure
-function CompressedStack(stack::CompressedStack, size::Int,
-  input::IOStream, context, index::Int)
+function CompressedStack(stack::CompressedStack, size::Int, context, index::Int,
+  pos::Int)
 
-  CompressedStack(size * stack.space, stack.space, input, stack.context_type, stack.data_type,
-  stack.push_action, stack.push_condition, stack.pop_action, stack.pop_condition;
+  input = stack.input
+  seek(input, pos)
+  
+  CompressedStack(size * stack.space, stack.space, input, stack.context_type,
+  stack.data_type, stack.push_action, stack.push_condition,
+  stack.pop_action, stack.pop_condition;
   index = index, context = Nullable(context), output = Nullable{IOStream}())
 end
 

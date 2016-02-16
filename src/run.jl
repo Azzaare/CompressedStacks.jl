@@ -41,7 +41,7 @@ function runCountingPop!(stack::CompressedStack)
     #print(stack)
     if stack.push_condition(stack, elt)
       println("pushing ",elt)
-      push!(stack, elt)      
+      push!(stack, elt)
       print(stack)
     end
   end
@@ -82,14 +82,17 @@ end
 
 ### Comparison between both Stacks
 function run!(cs::CompressedStack, ns::NormalStack)
+  println("\n\n!!!Start of the comparative run!!!\n")
   while !eof(cs.input)
-
     if eof(ns.input) != eof(cs.input)
-      error("The two stacks have different input reading")
+      println("eof_ns = $(eof(ns.input)); eof_cs = $(eof(cs.input))")
+      println("pos_ns = $(position(ns.input)); pos_cs = $(position(cs.input))")
+      print(cs)
+      print(ns)
+      error("The two stacks have different input reading: eof")
     elseif isempty(cs) != isempty(ns)
       error("Only one of the two stacks is empty")
     end
-
     elt = readinput(cs)
     if elt != readinput(ns)
       error("The content in the input file are read differently before a push!")
@@ -116,4 +119,7 @@ function run!(cs::CompressedStack, ns::NormalStack)
       push!(ns, elt)
     end
   end
+  println("\n\n!!!End of the comparative run!!!\n")
+  print(cs)
+  print(ns)
 end

@@ -21,8 +21,9 @@ end
 
 ## Reconstruct an auxiliary stack based on the signature found above
 function reconstruct!(stack::CompressedStack, sign::Signature, lvl::Int)
+  pos_reminder = position(stack.input)
   size = stack.space ^ (stack.depth + 1 - lvl)
-  aux = CompressedStack(stack, size, sign.input, sign.context, sign.first - 1)
+  aux = CompressedStack(stack, size, sign.context, sign.first-1, sign.position)
 
 ## Call the run! function in run.jl
   run!(aux, sign.last - sign.first)
@@ -39,6 +40,7 @@ function reconstruct!(stack::CompressedStack, sign::Signature, lvl::Int)
     end
   end
   stack.second_explicit = aux.first_explicit
+  seek(stack.input, pos_reminder)
 
 ## Clean the memory
   aux = 0

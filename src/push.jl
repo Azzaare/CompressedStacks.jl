@@ -24,7 +24,7 @@ function push_explicit!{T,D}(stack::CompressedStack{T,D}, elt::D)
   data = Data(elt, stack.index)
   if isempty(stack.first_explicit)
     push!(stack.first_explicit, data)
-    sign = Signature(stack.index, get(stack.context), deepcopy(stack.input))
+    sign = Signature(stack.index, get(stack.context), stack.pos)
     stack.first_sign = Nullable(sign)
   else
     head = top(stack)
@@ -41,7 +41,7 @@ function push_explicit!{T,D}(stack::CompressedStack{T,D}, elt::D)
         end
       end
       stack.second_sign = stack.first_sign
-      sign = Signature(stack.index, get(stack.context), deepcopy(stack.input))
+      sign = Signature(stack.index, get(stack.context), stack.pos)
       stack.first_sign = Nullable(sign)
       stack.second_explicit = stack.first_explicit
       stack.first_explicit = [data]
@@ -55,8 +55,7 @@ function push_compressed!{T,D}(stack::CompressedStack{T,D}, lvl::Int)
   dist_block = dist_subblock * stack.space
 
   if isempty(stack, lvl)
-    input_copy = deepcopy(stack.copy_input)
-    sign = Signature(stack.index, get(stack.context),input_copy)
+    sign = Signature(stack.index, get(stack.context),stack.pos)
     push!(stack.first_partial[lvl], sign)
   else
     head = top(stack.first_partial[lvl])
@@ -72,8 +71,7 @@ function push_compressed!{T,D}(stack::CompressedStack{T,D}, lvl::Int)
         subblock = length(stack.first_partial[lvl])
         update_top!(stack.first_partial[lvl], subblock, stack.index)
       else
-        input_copy = deepcopy(stack.copy_input)
-        sign = Signature(stack.index, get(stack.context), input_copy)
+        sign = Signature(stack.index, get(stack.context), stack.pos)
         push!(stack.first_partial[lvl], sign)
       end
     else
@@ -81,8 +79,7 @@ function push_compressed!{T,D}(stack::CompressedStack{T,D}, lvl::Int)
         compress!(stack, stack.compressed, stack.second_partial[1])
       end
       stack.second_partial[lvl] = stack.first_partial[lvl]
-      input_copy = deepcopy(stack.copy_input)
-      sign = Signature(stack.index, get(stack.context), input_copy)
+      sign = Signature(stack.index, get(stack.context), stack.pos)
       stack.first_partial[lvl] = [sign]
     end
   end
