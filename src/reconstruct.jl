@@ -32,7 +32,11 @@ function reconstruct!(stack::CompressedStack, sign::Signature, lvl::Int)
     stack.second_partial[δ + i] = aux.first_partial[i]
   end
   if lvl == 1
-    compress!(stack, aux.compressed, aux.second_partial[1])
+    if !isempty(aux.second_partial)
+      compress!(stack, aux.compressed, aux.second_partial[1])
+    else
+      stack.compressed = aux.compressed
+    end
   end
   stack.second_explicit = aux.first_explicit
 

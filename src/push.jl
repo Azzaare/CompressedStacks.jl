@@ -24,12 +24,25 @@ function push_explicit!{T,D}(stack::CompressedStack{T,D}, elt::D)
   data = Data(elt, stack.index)
   if isempty(stack.first_explicit)
     push!(stack.first_explicit, data)
+    sign = Signature(stack.index, get(stack.context), deepcopy(stack.input))
+    stack.first_sign = Nullable(sign)
   else
     head = top(stack)
     start_block = head - mod(head - 1, stack.space)
     if stack.index - start_block < stack.space
       push!(stack.first_explicit,data)
+      update_signature!(get(stack.first_sign), stack.index)
     else
+      if stack.depth == 1 && !isempty(stack.second_explicit)
+        if isnull(stack.compressed)
+          stack.compressed = stack.second_sign
+        else
+          update_signature!(get(stack.compressed), get(stack.second_sign).last)
+        end
+      end
+      stack.second_sign = stack.first_sign
+      sign = Signature(stack.index, get(stack.context), deepcopy(stack.input))
+      stack.first_sign = Nullable(sign)
       stack.second_explicit = stack.first_explicit
       stack.first_explicit = [data]
     end

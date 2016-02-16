@@ -72,3 +72,7 @@ end
 function update_top!{T}(block::Block{T}, subblock::Int, index::Int)
   block[subblock].last = index
 end
+
+function update_signature!{T}(sign::Signature{T}, index::Int)
+  sign.last = index
+end

@@ -27,6 +27,45 @@ function run!(stack::CompressedStack, limit::Int)
   end
 end
 
+### Functions to run a CompressedStack with extra control on the pop condition
+function runCountingPop!(stack::CompressedStack)
+  while !eof(stack.input)
+    elt = readinput(stack)
+    popCounter=0
+    while !isempty(stack) && stack.pop_condition(stack,elt,popCounter)
+      pop!(stack)
+      popCounter=popCounter+1
+    end
+    print(stack)
+    println("LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ",elt, " empty ",isempty(stack))
+    #print(stack)
+    if stack.push_condition(stack, elt)
+      println("pushing ",elt)
+      push!(stack, elt)      
+      print(stack)
+    end
+  end
+end
+# run! function specific to the reconstruction procedure of Compressed Stacks
+function runCountingPop!(stack::CompressedStack, limit::Int)
+  println("CALLED RUN COUNTING POP!")
+  while limit >= 0
+    elt = readinput(stack)
+    limit -= 1
+    popCounter=0
+    while !isempty(stack) && stack.pop_condition(stack,elt,popCounter)
+      pop!(stack)
+      popCounter=popCounter+1
+    end
+    if stack.push_condition(stack, elt)
+      push!(stack, elt)
+    end
+  end
+end
+
+
+
+
 ### For Normal Stacks
 function run!(stack::NormalStack)
   while !eof(stack.input)
@@ -57,7 +96,7 @@ function run!(cs::CompressedStack, ns::NormalStack)
     elseif cs.pop_condition(cs,elt) != ns.pop_condition(ns,elt)
       error("The pop conditions of the stacks give different boolean values")
     end
-    
+
     while !isempty(cs) && cs.pop_condition(cs,elt)
       if top(ns) != top(cs)
               print(cs)

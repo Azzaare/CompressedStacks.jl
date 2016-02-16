@@ -51,9 +51,11 @@ type CompressedStack{T,D}
   # First Blocks
   first_partial::Levels{T} # Levels of partially compressed blocks
   first_explicit::Vector{Data{D}}
+  first_sign::Nullable{Signature{T}}
   # Second Blocks
   second_partial::Levels{T} # Levels of partially compressed blocks
   second_explicit::Vector{Data{D}}
+  second_sign::Nullable{Signature{T}}
   # Fully Compressed Block (only a signature possibly empty [Nullable])
   compressed::Nullable{Signature{T}}
   # Stack's running information
@@ -77,6 +79,7 @@ function CompressedStack(size::Int, space::Int, input::IOStream,
   first_partial = Levels{context_type}()
   second_explicit = Vector{Data{data_type}}()
   second_partial = Levels{context_type}()
+  sign_explicit = compressed
 
   # Initialization of each Block at each level
   for i in 1:(depth-1)
@@ -87,8 +90,8 @@ function CompressedStack(size::Int, space::Int, input::IOStream,
   # Call to the basic constructor
   CompressedStack(size, space, depth, input, input, output, push_condition,
   push_action, pop_condition, pop_action, first_partial, first_explicit,
-  second_partial, second_explicit, compressed, index, context,
-  context_type, data_type)
+  sign_explicit, second_partial, second_explicit, sign_explicit,
+  compressed, index, context, context_type, data_type)
 end
 
 # Constructor for the reconstruction procedure

@@ -1,0 +1,335 @@
+Testing : FileName /home/yago/julia/compressedStackTest/CT.txt
+ repetitions: 100 n 100 p 10 testType(0 normal 1 compressed) 2
+CTTest with compressed stack, with Parameters size:100 space: 10 name /home/yago/julia/compressedStackTest/CT.txt
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 2 empty true
+pushing 2
+the top of the stack is 1 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 3 empty false
+pushing 3
+the top of the stack is 2 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 4 empty false
+pushing 4
+the top of the stack is 3 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 5 empty false
+pushing 5
+the top of the stack is 4 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 6 empty false
+pushing 6
+the top of the stack is 5 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 7 empty false
+pushing 7
+the top of the stack is 6 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 8 empty false
+pushing 8
+the top of the stack is 7 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 9 empty false
+pushing 9
+the top of the stack is 8 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 10 empty false
+pushing 10
+the top of the stack is 9 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 11 empty false
+pushing 11
+the top of the stack is 10 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 12 empty false
+pushing 12
+the top of the stack is 11 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 13 empty false
+pushing 13
+the top of the stack is 12 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 14 empty false
+pushing 14
+the top of the stack is 13 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 15 empty false
+pushing 15
+the top of the stack is 14 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 16 empty false
+pushing 16
+the top of the stack is 15 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 17 empty false
+pushing 17
+the top of the stack is 16 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 18 empty false
+pushing 18
+the top of the stack is 17 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 19 empty false
+pushing 19
+the top of the stack is 18 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 20 empty false
+pushing 20
+the top of the stack is 19 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 21 empty false
+pushing 21
+the top of the stack is 20 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 22 empty false
+pushing 22
+the top of the stack is 21 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 23 empty false
+pushing 23
+the top of the stack is 22 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 24 empty false
+pushing 24
+the top of the stack is 23 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 25 empty false
+pushing 25
+the top of the stack is 24 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 26 empty false
+pushing 26
+the top of the stack is 25 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 27 empty false
+pushing 27
+the top of the stack is 26 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 28 empty false
+pushing 28
+the top of the stack is 27 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 29 empty false
+pushing 29
+the top of the stack is 28 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 30 empty false
+pushing 30
+the top of the stack is 29 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 31 empty false
+pushing 31
+the top of the stack is 30 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 32 empty false
+pushing 32
+the top of the stack is 31 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 33 empty false
+pushing 33
+the top of the stack is 32 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 34 empty false
+pushing 34
+the top of the stack is 33 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 35 empty false
+pushing 35
+the top of the stack is 34 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 36 empty false
+pushing 36
+the top of the stack is 35 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 37 empty false
+pushing 37
+the top of the stack is 36 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 38 empty false
+pushing 38
+the top of the stack is 37 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 39 empty false
+pushing 39
+the top of the stack is 38 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 40 empty false
+pushing 40
+the top of the stack is 39 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 41 empty false
+pushing 41
+the top of the stack is 40 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 42 empty false
+pushing 42
+the top of the stack is 41 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 43 empty false
+pushing 43
+the top of the stack is 42 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 44 empty false
+pushing 44
+the top of the stack is 43 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 45 empty false
+pushing 45
+the top of the stack is 44 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 46 empty false
+pushing 46
+the top of the stack is 45 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 47 empty false
+pushing 47
+the top of the stack is 46 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 48 empty false
+pushing 48
+the top of the stack is 47 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 49 empty false
+pushing 49
+                                            POP 50: 48 so far I popped: 0 pop Limit is: 25 empty? false limit? 25
+                                            POP 50: 47 so far I popped: 1 pop Limit is: 25 empty? false limit? 25
+                                            POP 50: 46 so far I popped: 2 pop Limit is: 25 empty? false limit? 25
+                                            POP 50: 45 so far I popped: 3 pop Limit is: 25 empty? false limit? 25
+                                            POP 50: 44 so far I popped: 4 pop Limit is: 25 empty? false limit? 25
+                                            POP 50: 43 so far I popped: 5 pop Limit is: 25 empty? false limit? 25
+                                            POP 50: 42 so far I popped: 6 pop Limit is: 25 empty? false limit? 25
+                                            POP 50: 41 so far I popped: 7 pop Limit is: 25 empty? false limit? 25
+                                            POP 50: 40 so far I popped: 8 pop Limit is: 25 empty? false limit? 25
+                                            POP 50: 39 so far I popped: 9 pop Limit is: 25 empty? false limit? 25
+                                            POP 50: 38 so far I popped: 10 pop Limit is: 25 empty? false limit? 25
+                                            POP 50: 37 so far I popped: 11 pop Limit is: 25 empty? false limit? 25
+                                            POP 50: 36 so far I popped: 12 pop Limit is: 25 empty? false limit? 25
+                                            POP 50: 35 so far I popped: 13 pop Limit is: 25 empty? false limit? 25
+                                            POP 50: 34 so far I popped: 14 pop Limit is: 25 empty? false limit? 25
+                                            POP 50: 33 so far I popped: 15 pop Limit is: 25 empty? false limit? 25
+                                            POP 50: 32 so far I popped: 16 pop Limit is: 25 empty? false limit? 25
+                                            POP 50: 31 so far I popped: 17 pop Limit is: 25 empty? false limit? 25
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 50 empty true
+pushing 50
+the top of the stack is 49 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 51 empty false
+pushing 51
+the top of the stack is 50 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 52 empty false
+pushing 52
+the top of the stack is 51 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 53 empty false
+pushing 53
+the top of the stack is 52 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 54 empty false
+pushing 54
+the top of the stack is 53 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 55 empty false
+pushing 55
+the top of the stack is 54 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 56 empty false
+pushing 56
+the top of the stack is 55 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 57 empty false
+pushing 57
+the top of the stack is 56 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 58 empty false
+pushing 58
+the top of the stack is 57 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 59 empty false
+pushing 59
+the top of the stack is 58 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 60 empty false
+pushing 60
+the top of the stack is 59 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 61 empty false
+pushing 61
+the top of the stack is 60 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 62 empty false
+pushing 62
+the top of the stack is 61 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 63 empty false
+pushing 63
+the top of the stack is 62 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 64 empty false
+pushing 64
+the top of the stack is 63 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 65 empty false
+pushing 65
+the top of the stack is 64 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 66 empty false
+pushing 66
+the top of the stack is 65 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 67 empty false
+pushing 67
+the top of the stack is 66 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 68 empty false
+pushing 68
+the top of the stack is 67 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 69 empty false
+pushing 69
+the top of the stack is 68 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 70 empty false
+pushing 70
+the top of the stack is 69 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 71 empty false
+pushing 71
+the top of the stack is 70 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 72 empty false
+pushing 72
+the top of the stack is 71 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 73 empty false
+pushing 73
+the top of the stack is 72 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 74 empty false
+pushing 74
+the top of the stack is 73 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 75 empty false
+pushing 75
+the top of the stack is 74 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 76 empty false
+pushing 76
+the top of the stack is 75 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 77 empty false
+pushing 77
+the top of the stack is 76 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 78 empty false
+pushing 78
+the top of the stack is 77 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 79 empty false
+pushing 79
+the top of the stack is 78 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 80 empty false
+pushing 80
+the top of the stack is 79 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 81 empty false
+pushing 81
+the top of the stack is 80 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 82 empty false
+pushing 82
+the top of the stack is 81 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 83 empty false
+pushing 83
+the top of the stack is 82 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 84 empty false
+pushing 84
+the top of the stack is 83 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 85 empty false
+pushing 85
+the top of the stack is 84 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 86 empty false
+pushing 86
+the top of the stack is 85 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 87 empty false
+pushing 87
+the top of the stack is 86 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 88 empty false
+pushing 88
+the top of the stack is 87 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 89 empty false
+pushing 89
+the top of the stack is 88 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 90 empty false
+pushing 90
+the top of the stack is 89 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 91 empty false
+pushing 91
+the top of the stack is 90 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 92 empty false
+pushing 92
+the top of the stack is 91 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 93 empty false
+pushing 93
+the top of the stack is 92 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 94 empty false
+pushing 94
+the top of the stack is 93 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 95 empty false
+pushing 95
+the top of the stack is 94 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 96 empty false
+pushing 96
+the top of the stack is 95 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 97 empty false
+pushing 97
+the top of the stack is 96 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 98 empty false
+pushing 98
+the top of the stack is 97 and I am NOT popping because 0 is bigger or equal than -1
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 99 empty false
+pushing 99
+                                            POP 50: 98 so far I popped: 0 pop Limit is: 25 empty? false limit? 25
+                                            POP 50: 97 so far I popped: 1 pop Limit is: 25 empty? false limit? 25
+                                            POP 50: 96 so far I popped: 2 pop Limit is: 25 empty? false limit? 25
+                                            POP 50: 95 so far I popped: 3 pop Limit is: 25 empty? false limit? 25
+                                            POP 50: 94 so far I popped: 4 pop Limit is: 25 empty? false limit? 25
+                                            POP 50: 93 so far I popped: 5 pop Limit is: 25 empty? false limit? 25
+                                            POP 50: 92 so far I popped: 6 pop Limit is: 25 empty? false limit? 25
+                                            POP 50: 91 so far I popped: 7 pop Limit is: 25 empty? false limit? 25
+                                            POP 50: 90 so far I popped: 8 pop Limit is: 25 empty? false limit? 25
+                                            POP 50: 89 so far I popped: 9 pop Limit is: 25 empty? false limit? 25
+                                            POP 50: 88 so far I popped: 10 pop Limit is: 25 empty? false limit? 25
+                                            POP 50: 87 so far I popped: 11 pop Limit is: 25 empty? false limit? 25
+                                            POP 50: 86 so far I popped: 12 pop Limit is: 25 empty? false limit? 25
+                                            POP 50: 85 so far I popped: 13 pop Limit is: 25 empty? false limit? 25
+                                            POP 50: 84 so far I popped: 14 pop Limit is: 25 empty? false limit? 25
+                                            POP 50: 83 so far I popped: 15 pop Limit is: 25 empty? false limit? 25
+                                            POP 50: 82 so far I popped: 16 pop Limit is: 25 empty? false limit? 25
+                                            POP 50: 81 so far I popped: 17 pop Limit is: 25 empty? false limit? 25
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 100 empty true
+pushing 100
+LEAVING POP LOOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 101 empty true
+pushing 101
