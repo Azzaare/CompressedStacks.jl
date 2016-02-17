@@ -23,7 +23,7 @@ end
 function reconstruct!(stack::CompressedStack, sign::Signature, lvl::Int)
   pos_reminder = position(stack.input)
   size = stack.space ^ (stack.depth + 1 - lvl)
-  aux = CompressedStack(stack, size, sign.context, sign.first-1, sign.position)
+  aux = CompressedStack(stack, size, sign.context,sign.first-1,sign.pos)
 
 ## Call the run! function in run.jl
   run!(aux, sign.last - sign.first)

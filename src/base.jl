@@ -5,7 +5,7 @@ type Signature{T}
   first::Int
   last::Int
   context::T
-  position::Int # position of the input
+  pos::Int # position of the input
 end
 
 ## A Partially Compressed Block is composed of the signatures of its SubBlocks
@@ -20,16 +20,16 @@ end
 
 ## Constructor for Signature
 # Constructor for singleton signature
-function Signature{T}(index::Int, context::T, position::Int)
-  Signature(index, index, context, position)
+function Signature{T}(index::Int, context::T, pos::Int)
+  Signature(index, index, context, pos)
 end
 # Constructor for a Signature (from a Block)
 function Signature{T}(block::Block{T})
   context = block[1].context
   first = block[1].first
-  pos = block[1].input
+  pos = block[1].pos
   last = block[end].last
-  Signature(first, last, context, input)
+  Signature(first, last, context, pos)
 end
 
 ## General CompressedStack (i.e. with parametric context T and data type D)
@@ -101,7 +101,7 @@ function CompressedStack(stack::CompressedStack, size::Int, context, index::Int,
 
   input = stack.input
   seek(input, pos)
-  
+
   CompressedStack(size * stack.space, stack.space, input, stack.context_type,
   stack.data_type, stack.push_action, stack.push_condition,
   stack.pop_action, stack.pop_condition;
